@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7624961-6E1C-43D3-B0E0-C642F190F122}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgileFx.ORM</RootNamespace>
+    <AssemblyName>AgileFx.ORM</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\Cache.cs" />
+    <Compile Include="Caching\CacheParams.cs" />
+    <Compile Include="Caching\CacheQueryResult.cs" />
+    <Compile Include="Caching\InMemoryStore\InMemoryCacheSet.cs" />
+    <Compile Include="Caching\InMemoryStore\InMemoryStore.cs" />
+    <Compile Include="Caching\InMemoryStore\MemoizationEntry.cs" />
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="QueryAnalysis\ExpressionTranslationResult.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\All.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Average.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Contains.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Any.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\CreateQuery.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Where.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\ThenBy.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Take.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\OrderBy.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Reverse.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Single.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Last.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Distinct.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\ElementAt.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\First.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\SimpleMethodTranslator.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\SingleValueMethodTranslator.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Skip.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Sum.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\LongCount.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Count.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\ScalarMethodTranslator.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\MethodTranslator.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\MethodTranslatorList.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\SequenceEqual.cs" />
+    <Compile Include="QueryAnalysis\TypeTracking\ManyToManyMapType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QueryAnalysis\TypeTracking\NonTranslatableType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QueryAnalysis\TypeTracking\ProjectedType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QueryAnalysis\TypeTracking\RuntimeTypes.cs" />
+    <Compile Include="QueryAnalysis\TypeTracking\SimpleType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Serialization\SerializableCollection.cs" />
+    <Compile Include="ContextServices\IObjectGraph.cs" />
+    <Compile Include="Serialization\SerializedForm.cs" />
+    <Compile Include="Serialization\SerializableInstance.cs" />
+    <Compile Include="TypeFactoryAttribute.cs" />
+    <Compile Include="TypeFactory.cs" />
+    <Compile Include="QueryAnalysis\ProjectionModifier.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Concat.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Except.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Intersect.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\SelectMany.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\GroupJoin.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\GroupBy.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\LoadRelated.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Join.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Select.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\TranslatorFinder.cs" />
+    <Compile Include="QueryAnalysis\MethodTranslation\Union.cs" />
+    <Compile Include="QueryAnalysis\ProjectionBindings.cs" />
+    <Compile Include="QueryAnalysis\QueryTranslationVisitor.cs" />
+    <Compile Include="SetOverride.cs" />
+    <Compile Include="ContextServices\ContextBinder.cs" />
+    <Compile Include="ContextServices\ObjectTracker.cs" />
+    <Compile Include="Parallelization\ParallelScope.cs" />
+    <Compile Include="Parallelization\ParallelWorkItem.cs" />
+    <Compile Include="ContextServices\InMemoryInstanceGraph.cs" />
+    <Compile Include="Serialization\MaterializationIncludes.cs" />
+    <Compile Include="Serialization\SerializableObjectGraph.cs" />
+    <Compile Include="Serialization\ObjectGraphSerializer.cs" />
+    <Compile Include="Caching\Store.cs" />
+    <Compile Include="Backends\LinqToSql\L2SQueryCompiler.cs" />
+    <Compile Include="Extensions\IntermediateEntityExtensions.cs" />
+    <Compile Include="QueryCompilation\CompiledQuery.cs" />
+    <Compile Include="QueryCompilation\CompilableQueryAnalyzer.cs" />
+    <Compile Include="QueryAnalysis\QueryTranslationResult.cs" />
+    <Compile Include="EntityExtensions.cs" />
+    <Compile Include="Extensions\EntityExtensions.cs" />
+    <Compile Include="Lib\IQToolkit\CompoundKey.cs" />
+    <Compile Include="Lib\IQToolkit\DeferredList.cs" />
+    <Compile Include="Lib\IQToolkit\DeferredValue.cs" />
+    <Compile Include="Lib\IQToolkit\EnumerateOnce.cs" />
+    <Compile Include="Lib\IQToolkit\ExpressionComparer.cs" />
+    <Compile Include="Lib\IQToolkit\ExpressionEvaluator.cs" />
+    <Compile Include="Lib\IQToolkit\ExpressionExtensions.cs" />
+    <Compile Include="Lib\IQToolkit\ExpressionReplacer.cs" />
+    <Compile Include="Lib\IQToolkit\ExpressionVisitor.cs" />
+    <Compile Include="Lib\IQToolkit\ExpressionWriter.cs" />
+    <Compile Include="Lib\IQToolkit\Grouping.cs" />
+    <Compile Include="Lib\IQToolkit\IEntityProvider.cs" />
+    <Compile Include="Lib\IQToolkit\IEntitySession.cs" />
+    <Compile Include="Lib\IQToolkit\MostRecentlyUsedCache.cs" />
+    <Compile Include="Lib\IQToolkit\PartialEvaluator.cs" />
+    <Compile Include="Lib\IQToolkit\Query.cs" />
+    <Compile Include="Lib\IQToolkit\QueryCache.cs" />
+    <Compile Include="Lib\IQToolkit\QueryCompiler.cs" />
+    <Compile Include="Lib\IQToolkit\QueryProvider.cs" />
+    <Compile Include="Lib\IQToolkit\ReadOnlyExtensions.cs" />
+    <Compile Include="Lib\IQToolkit\ReflectionExtensions.cs" />
+    <Compile Include="Lib\IQToolkit\ScopedDictionary.cs" />
+    <Compile Include="Lib\IQToolkit\StrongDelegate.cs" />
+    <Compile Include="Lib\IQToolkit\TopologicalSort.cs" />
+    <Compile Include="Lib\IQToolkit\TypedSubtreeFinder.cs" />
+    <Compile Include="Lib\IQToolkit\TypeHelper.cs" />
+    <Compile Include="Lib\IQToolkit\Updatable.cs" />
+    <Compile Include="ObjectComposition\EntityField.cs" />
+    <Compile Include="ObjectComposition\IIntermediateEntityContainer.cs" />
+    <Compile Include="IModelEntity.cs" />
+    <Compile Include="IPOCO.cs" />
+    <Compile Include="QueryCompilation\QueryCompiler.cs" />
+    <Compile Include="Backends\LinqToSql\L2STypeTranslationUtil.cs" />
+    <Compile Include="Backends\LinqToSql\MethodFinder.cs" />
+    <Compile Include="ManyToManyCollection.cs" />
+    <Compile Include="ObjectComposition\PrimaryKeyField.cs" />
+    <Compile Include="Reflection\MethodFinder.cs" />
+    <Compile Include="Services.cs" />
+    <Compile Include="Types\Grouping.cs" />
+    <Compile Include="Utils\IncludeDirectiveUtil.cs" />
+    <Compile Include="Utils\TypesUtil.cs" />
+    <Compile Include="Utils\ExpressionUtil.cs" />
+    <Compile Include="FieldReference.cs" />
+    <Compile Include="IModification.cs" />
+    <Compile Include="IncludeDirective.cs" />
+    <Compile Include="Modification.cs" />
+    <Compile Include="ModificationType.cs" />
+    <Compile Include="ModificationTypes\EntityAddition.cs" />
+    <Compile Include="ModificationTypes\EntityDeletion.cs" />
+    <Compile Include="ModificationTypes\EntityUpdateFunc.cs" />
+    <Compile Include="ModificationTypes\EntityUpdation.cs" />
+    <Compile Include="ModificationTypes\Modification.cs" />
+    <Compile Include="ModificationTypes\Modification_Addition.cs" />
+    <Compile Include="ModificationTypes\Modification_Deletion.cs" />
+    <Compile Include="ModificationTypes\Modification_SetReference.cs" />
+    <Compile Include="ModificationTypes\Modification_Updation.cs" />
+    <Compile Include="ModificationTypes\SetReference.cs" />
+    <Compile Include="PartialResultset.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mapping\ClassMappingAttribute.cs" />
+    <Compile Include="Materialization\EntityConstructor.cs" />
+    <Compile Include="Mapping\EntityMapping.cs" />
+    <Compile Include="EntityCollection.cs" />
+    <Compile Include="EntityContext.cs" />
+    <Compile Include="EntityQuery.cs" />
+    <Compile Include="EntityQueryProvider.cs" />
+    <Compile Include="ObjectComposition\IntermediateEntityReference.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="ObjectComposition\IntermediateEntity.cs" />
+    <Compile Include="ObjectComposition\IntermediateEntityCollection.cs" />
+    <Compile Include="ObjectComposition\ITableEntity.cs" />
+    <Compile Include="ITableEntityContext.cs" />
+    <Compile Include="Backends\LinqToSql\DataContextWrapper.cs" />
+    <Compile Include="Backends\LinqToSql\L2SDataContext.cs" />
+    <Compile Include="Backends\LinqToSql\L2SQuery.cs" />
+    <Compile Include="Backends\LinqToSql\L2SQueryProvider.cs" />
+    <Compile Include="ObjectComposition\IntermediateManyToManyCollection.cs" />
+    <Compile Include="Mapping\MapEntityMapping.cs" />
+    <Compile Include="Materialization\CollectionIncludesLoader.cs" />
+    <Compile Include="Materialization\InheritanceChainLoader.cs" />
+    <Compile Include="Materialization\ManyToManyMapLoader.cs" />
+    <Compile Include="Materialization\Materializer.cs" />
+    <Compile Include="Materialization\PostProjectionLoadedResult.cs" />
+    <Compile Include="Materialization\PostProjectionLoader.cs" />
+    <Compile Include="Materialization\ResultListMaterializer.cs" />
+    <Compile Include="Materialization\SingleObjectMaterializer.cs" />
+    <Compile Include="Utils\MethodsUtil.cs" />
+    <Compile Include="Mapping\ModelEntityMapping.cs" />
+    <Compile Include="QueryAnalysis\QueryAnalysisContext.cs" />
+    <Compile Include="Materialization\TableEntityRow.cs" />
+    <Compile Include="Utils\TypeTranslationUtil.cs" />
+    <Compile Include="Extensions\QueryExtensions.cs" />
+    <Compile Include="Types\Binary.cs" />
+    <Compile Include="ObjectComposition\POCOContainer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Backends\IQToolkit\PlaceHolder.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgileFx.Common\AgileFx.Common.csproj">
+      <Project>{14A1E371-C01C-417E-A0AD-43369E4DAA00}</Project>
+      <Name>AgileFx.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Parallelization\CLR_3_5\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

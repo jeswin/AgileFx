@@ -1,0 +1,5 @@
+D:\projects\AgileFx\AgileModeler\Setup\ItemWizard\bin\Debug\AgileFx.AgileModeler.ItemWizard.dll
+D:\projects\AgileFx\AgileModeler\Setup\ItemWizard\bin\Debug\AgileFx.AgileModeler.ItemWizard.pdb
+D:\projects\AgileFx\AgileModeler\Setup\ItemWizard\obj\Debug\ResolveAssemblyReference.cache
+D:\projects\AgileFx\AgileModeler\Setup\ItemWizard\obj\Debug\AgileFx.AgileModeler.ItemWizard.dll
+D:\projects\AgileFx\AgileModeler\Setup\ItemWizard\obj\Debug\AgileFx.AgileModeler.ItemWizard.pdb

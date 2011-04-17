@@ -1,0 +1,206 @@
+﻿/* ----------------------------
+    HTML Elements
+-----------------------------*/
+body { text-align:center; color: #444; font-family: Arial, Helvetica, Trebuchet MS; font-size: 12px; line-height: 1.1em;
+           background: #fff url(/styles/common/pagebg.png) repeat; padding:0px; margin: 0px }
+    
+p { margin:0px; padding:4px; color: #333; }
+
+h1, h2, h3, h4, h5, h6 { font-family: Lucida Sans Unicode, Lucida Grande, Trebuchet MS, Arial, Helvetica; margin:0; }
+h1 { font-size: 20px; padding: 6px 0px 12px 0px; }
+h2 { font-size: 16px; padding: 8px 0px 8px 0px; }
+h3 { font-size: 14px; padding: 2px 0px 6px 0px; }
+h4 { font-size: 12px; padding: 2px 0px 4px 0px; }
+h5 { font-size: 13px; padding: 2px 0px 4px 0px; font-weight: normal }
+
+a img { border:none 0px; }
+a, a:visited { color:#03c }
+
+ul, ul li { margin:0px 0px 0px 12px; padding:0; }
+
+/* -------------------
+    Common Classes
+----------------------*/
+.button { cursor: pointer; }
+.center { text-align: center }
+div.small, ul.small, li.small, p.small, span.small { font-size: 11px; color:Gray }
+.talllines { line-height: 1.7em  }
+p.iconic { background-repeat: no-repeat; padding-left: 32px; height:24px }
+.icon-block { width: 200px; height: 200px; background-repeat:no-repeat }
+
+/* Frame is the top level container */
+#frame { }
+
+/* ---------- Content ---------- */
+.pageContent { text-align:left; margin:0px auto 0px auto; }
+
+/* ----------- Footer ---------- */
+.footer { text-align:center; font-size: 11px; margin-top: 32px; }
+    .footer .content { padding:12px 0px 12px 0px; color: #aaa; background: #fff; }  
+    .footer a, .footer a:hover, .footer a:visited { color: #aaa }
+    
+        /* sticky footer */
+        html, body.hasFooter, body.hasFooter #frame { height: 100% }
+        body.hasFooter .pageContent { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -152px; position:relative } 
+        .clearFooter { clear: both }
+        .footer, .clearFooter { height: 152px } 
+
+/* -------- login and settings ------- */
+body.loggedInView .header .loginAndSettings { padding: 0px 12px 0px 0px; float: right; width: 200px; font-size: 11px; color: #ccc }
+    body.loggedInView #settingsLink { position:static; float: left; margin-top: -24px; width: 80px; padding: 16px 0px 0px 8px; }
+        body.loggedInView #settingsLink li { padding-right: 0px; }
+    body.loggedInView #loginLink { text-align:center; float: left; }
+            body.loggedInView #loginLink a, body.loggedInView #loginLink a:hover,
+                body.loggedInView #loginLink a:visited { color: #ccc }
+
+/*-----------------------------------------------------------------------------------------
+    One menu to rule them all. http://www.sohtanaka.com/ (via www.noupe.com). Thanks man.
+------------------------------------------------------------------------------------------*/
+
+ul.topnav { position:absolute; z-index: 1000; list-style: none; margin: 0; float: left; font-size: 1.2em; background-color: #333; }
+    
+    ul.topnav li { float: left; text-align:center; margin: 0; padding: 0 12px 0 12px; position: relative; /*--Declare X and Y axis base for sub navigation--*/ }
+    
+        ul.topnav li a { padding: 10px 1px; display: block; text-decoration: none; float: left; font-size:14px; 
+                         color:#ccc;  text-transform:uppercase; font-family: Lucida Sans Unicode, Lucida Grande, Trebuchet MS, Arial, Helvetica }
+    
+            ul.topnav li a.selected, ul.topnav li a.selected:hover { color:#6F0; text-decoration: underline }
+    
+            ul.topnav li a:hover{ /* background: url(topnav_hover.gif) no-repeat center top; */ }
+
+        ul.topnav li span { /*--Drop down trigger styles--*/
+	        width: 17px; height: 35px; float: left; background: url(/styles/common/subnav_btn.gif) no-repeat center top; }
+	
+        ul.topnav li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
+
+        ul.topnav li ul.subnav { list-style: none; position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+                                 left: 0; top: 30px; background: #333; margin: 0; padding: 0; display: none; float: left;
+                                 width: 170px; border: 1px solid #111; }
+                              
+            ul.topnav li ul.subnav li{ margin: 0; padding: 0 0 8px 0; border-top: 1px solid #252525; /*--Create bevel effect--*/
+                                       border-bottom: 1px solid #444; /*--Create bevel effect--*/ clear: both; height:24px;
+                                       width: 170px; color: #ccc }
+                
+                html ul.topnav li ul.subnav li a { /* background: #333 url(dropdown_linkbg.gif) no-repeat 10px center; */
+                                                   text-align:left; float: left; width: 145px; padding-left: 20px; text-transform:none }
+                
+                html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/ /*background: #222 url(dropdown_linkbg.gif) no-repeat 10px center; */ }
+
+/* -----------------------------------------------------
+        Site.Master (template/page specific)
+------------------------------------------------------ */
+body.site {}
+	
+/* ---------- Header ---------- */
+body.site .header { height: 80px; text-align:center; background: url(/styles/common/headerbg.png) repeat-x }
+body.site .header .contents { width:620px; margin: 0 auto 0 auto }
+body.site .header .logo { float:left; padding:0px; width:120px; }
+
+body.site #mainmenu.topnav { padding: 16px 20px 0px 8px; position: relative; width: 450px }
+    body.site #mainmenu.topnav li { padding-right: 20px }
+
+/* ---------- Content ---------- */
+body.site .pageContent { width: 960px; }
+    
+/* ---------- Left and Right Panes ---------- */
+body.site .leftPane { float:left; width: 650px; padding: 12px 12px 24px 12px; background-color: White; border: solid 1px #ccc;
+           font-size: 14px; }
+    body.site .leftPane h1 { margin: -12px -12px 8px -12px; padding:14px 0px 14px 12px; background-color: #fe9 }
+body.site .rightPane { float: left; padding-left: 20px; }
+
+/* ---------- Form ---------- */
+body.site div.form { } 
+    
+    body.site div.form .banner { background-color: #eee; padding: 8px; margin-bottom: 12px }
+    
+    /* This form shows a label and an input control side by side */
+    body.site div.form form { padding-left: 20px }
+        body.site div.form form h3 { color: #3C0; margin-top: 24px }
+        body.site div.form form table.labelControlPair { width: 360px; }
+            body.site div.form form table.labelControlPair td { border-bottom: dotted 1px #ccc; padding: 4px 0px 8px 0px }
+            body.site div.form form table.labelControlPair td:first-child { width:120px }
+            body.site div.form form table.labelControlPair input { font-size: 16px; width: 228px }
+            body.site div.form form table.labelControlPair select { font-size: 16px; width: 234px }
+        body.site div.form form .submitButton { margin-top: 20px }
+        body.site div.form form input, div.form form select { font-size: 16px; padding: 2px }
+    
+/* ---------- Front Page ---------- */
+.frontPage { height:400px; background: url(/styles/site/frontPage/taskometer.png) no-repeat center; }
+    .frontPage .content { padding: 332px 0px 0px 564px }
+
+/* ---------- Pricing Page ---------- */
+.pricingPage { }
+    .pricingPage .plans { margin: 10px 0px 10px 0px } 
+    .pricingPage .plan { margin-top: 20px; float:left; height:324px; background:#fff url(/styles/common/regular-area-bg.png) repeat-x; padding: 0px 12px 12px 12px; 
+                         border: solid 1px #666; border-right: none; width:180px; }  
+        
+        .pricingPage .plan.last { border-left: none 0px; border-right: solid 1px #666; }  
+        
+    .pricingPage h2 { text-align:center; color: #3C0; font-size: 24px; padding: 12px 0px 8px 0px}
+    .pricingPage h3 { text-align:center; color: #3C0; font-size: 18px; padding: 6px 0px 6px 0px}
+    
+    .pricingPage table { margin-top: 6px; }
+    .pricingPage td { text-align:center; font-size:16px; font-weight:bold; line-height: 1.3; border-bottom:dotted 1px #ccc; width: 180px; padding: 4px 0px 4px 0px }
+    
+    .pricingPage p.signup { text-align: center; font-size: 20px; padding-top: 12px }
+    
+    .pricingPage .plan.standard { margin-top:0px; font-size: 120%; height:388px; width: 212px; 
+                               background:#fff url(/styles/common/highlighted-area-bg.png) repeat-x; border: solid 3px #f90; }
+        .pricingPage .plan.standard table { margin-left: 12px }
+        .pricingPage .plan.standard td { font-size:20px }
+            .pricingPage .plan.standard h2 { font-size: 28px; }
+            .pricingPage .plan.standard h3 { font-size: 22px; }
+    
+    .pricingPage .highlight { color:#f90 }
+    
+/* --------- Signup Page ---------- */
+.signupPage .applicationsBlock { margin-top: 12px; margin-right:12px; padding: 8px; background-color: #ffc }
+    .signupPage .applicationsBlock h4 { font-size: 14px; padding-top: 0px }
+        
+    .signupPage .applicationsBlock table.appList { margin: 8px 0px 8px 0px; border-top: dotted 1px #ccc; }
+        .signupPage .applicationsBlock table.appList td, .signupPage .applicationsBlock th 
+                { vertical-align:top; border-bottom: dotted 1px #ccc; padding: 4px 12px 4px 4px }
+        .signupPage .applicationsBlock table.appList th { font-size: 12px; font-weight: bold }
+    
+    .signupPage .applicationsBlock p { padding: 0; margin: 0 }
+    
+    .signupPage .applicationsBlock .urlSelector { font-size: 12px; color: Gray }
+        .signupPage .applicationsBlock .urlSelector a { font-size: 11px }
+            .signupPage .applicationsBlock .urlSelector table.urlDisplay td { border:none }
+            .signupPage .applicationsBlock .urlSelector table.urlDisplay td.url { color:Maroon; width: 320px }
+            
+    #editAppUrlDialog { text-align: left; }
+        #editAppUrlDialog .domainPlaceholder { padding-left: 20px; }
+        #editAppUrlDialog .customDomain { padding-left: 20px; }
+/* -----------------------------------------------------
+        Tenants-Simple.Master (template/page specific)
+------------------------------------------------------ */
+body.tenants-simple {}
+body.tenants-simple .pageContent { width: 960px; padding-top: 40px; }
+body.tenants-simple .pageContent, body.tenants-Simple p, body.tenants-Simple div, body.tenants-Simple h1, 
+body.tenants-simple h2, body.tenants-Simple h3 { text-align: center } 
+
+/* ----------- Form ----------- */
+body.tenants-simple form { font-size:16px; background-color: White; padding: 12px; width: 260px; margin: 8px auto 20px auto; 
+                           text-align: left; border: solid 1px #ccc; }
+    body.tenants-simple form p { padding-bottom: 8px }
+    body.tenants-simple form input, body.tenants-simple form input { margin-top: 4px; font-size: 16px; padding: 2px }
+    
+.loginPage label.remember { padding-left: 4px; font-size: 14px }
+.loginPage span.forgot { margin-left: 12px }
+
+/* -----------------------------------------------------
+        Tenants.Master (template/page specific)
+------------------------------------------------------ */
+
+/* ---------- Header ---------- */
+body.tenants .header { height: 32px; background: url(/styles/common/headerbg.png) repeat-x }
+    body.tenants .header .logo { float:left; padding:0px; width:148px; }
+body.tenants #mainmenu { padding: 0px 0px 0px 8px; left: 180px; width: 660px; height: 32px }
+    body.tenants #mainmenu a { padding:8px 0px 8px 0px; margin: 0; }
+    body.tenants #mainmenu .subnav a { padding-left: 12px; margin: 0; }
+    
+    
+/* ------------ About Page ------------ */
+.aboutPage { line-height: 1.6em }
+.aboutPage p { margin-bottom: 16px; }    

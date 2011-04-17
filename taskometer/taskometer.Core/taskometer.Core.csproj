@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E45B4E4-F2EA-44E6-87A5-2960BB1E35BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>taskometer.Core</RootNamespace>
+    <AssemblyName>taskometer.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ColorCode, Version=1.0.0.62755, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WikiPlex, Version=1.3.0.215, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Website\Category.cs" />
+    <Compile Include="Models\Website\Comment.cs" />
+    <Compile Include="Models\Website\Page.cs" />
+    <Compile Include="Models\Website\PageContent.cs" />
+    <Compile Include="Models\Website\Template.cs" />
+    <Compile Include="Models\Website\TemplatePlaceHolder.cs" />
+    <Compile Include="Models\Website\Website.cs" />
+    <Compile Include="Models\Permission.cs" />
+    <Compile Include="Models\PermissionSet.cs" />
+    <Compile Include="Models\taskometer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>taskometer.models</DependentUpon>
+    </Compile>
+    <Compile Include="Models\taskometer_backend_linqtosql.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>taskometer_backend_linqtosql.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tenant.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Website\WikiRenderer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SiteSettings.cs" />
+    <Compile Include="Utils\SlugHelper.cs" />
+    <Compile Include="Wiki\CustomAnchorTag.cs" />
+    <Compile Include="Wiki\CustomImageTag.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\taskometer.models">
+      <Generator>AgileModelerCodeGenerator</Generator>
+      <LastGenOutput>taskometer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DbScripts\KillDb.sql" />
+    <None Include="DbScripts\PreFill.sql" />
+    <None Include="DbScripts\TaskometerDb.sql" />
+    <None Include="Models\taskometer_backend_linqtosql.dbml">
+      <DependentUpon>taskometer.models</DependentUpon>
+      <CustomToolNamespace>taskometer.Core.Models.L2S</CustomToolNamespace>
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>taskometer_backend_linqtosql.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\AgileFx\AgileFx.Common\AgileFx.Common.csproj">
+      <Project>{14A1E371-C01C-417E-A0AD-43369E4DAA00}</Project>
+      <Name>AgileFx.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AgileFx\AgileFx.MVC\AgileFx.MVC.csproj">
+      <Project>{3B382784-A017-47B2-B709-C84E350B236C}</Project>
+      <Name>AgileFx.MVC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\AgileFx\AgileFx.ORM\AgileFx.ORM.csproj">
+      <Project>{C7624961-6E1C-43D3-B0E0-C642F190F122}</Project>
+      <Name>AgileFx.ORM</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Lib\ColorCode.dll" />
+    <Content Include="Lib\WikiPlex.dll" />
+    <Content Include="Models\to-add.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\taskometer_backend_linqtosql.dbml.layout">
+      <DependentUpon>taskometer_backend_linqtosql.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Auth\" />
+    <Folder Include="Models\IssueTracking\" />
+    <Folder Include="Models\ProjectManagement\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

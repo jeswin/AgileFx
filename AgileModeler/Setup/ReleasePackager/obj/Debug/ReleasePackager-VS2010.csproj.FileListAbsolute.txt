@@ -1,0 +1,5 @@
+D:\projects\AgileFx\AgileModeler\Setup\ReleasePackager\bin\Debug\ReleasePackager.exe
+D:\projects\AgileFx\AgileModeler\Setup\ReleasePackager\bin\Debug\ReleasePackager.pdb
+D:\projects\AgileFx\AgileModeler\Setup\ReleasePackager\obj\Debug\ResolveAssemblyReference.cache
+D:\projects\AgileFx\AgileModeler\Setup\ReleasePackager\obj\Debug\ReleasePackager.exe
+D:\projects\AgileFx\AgileModeler\Setup\ReleasePackager\obj\Debug\ReleasePackager.pdb

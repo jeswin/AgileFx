@@ -1,0 +1,5 @@
+﻿1. Tenant model needs a Stylesheet field (applied to Tenant.Master)
+2. Website needs a Stylesheet field
+3. Tenant needs a footer field.
+4. Create Template class - references from Tenant and Website
+5. login and settings - top right.

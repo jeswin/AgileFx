@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taskometer.Web", "taskometer.Web\taskometer.Web.csproj", "{933C4920-34CC-40C1-B4A0-27AD9B9F1005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taskometer.Core", "taskometer.Core\taskometer.Core.csproj", "{0E45B4E4-F2EA-44E6-87A5-2960BB1E35BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileFx.ORM", "..\AgileFx\AgileFx.ORM\AgileFx.ORM.csproj", "{C7624961-6E1C-43D3-B0E0-C642F190F122}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileFx.Common", "..\AgileFx\AgileFx.Common\AgileFx.Common.csproj", "{14A1E371-C01C-417E-A0AD-43369E4DAA00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileFx.MVC", "..\AgileFx\AgileFx.MVC\AgileFx.MVC.csproj", "{3B382784-A017-47B2-B709-C84E350B236C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taskometer.Setup", "taskometer.Setup\taskometer.Setup.csproj", "{7B3177BB-4ED4-41E3-839D-75F7D512DA27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{933C4920-34CC-40C1-B4A0-27AD9B9F1005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{933C4920-34CC-40C1-B4A0-27AD9B9F1005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{933C4920-34CC-40C1-B4A0-27AD9B9F1005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{933C4920-34CC-40C1-B4A0-27AD9B9F1005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E45B4E4-F2EA-44E6-87A5-2960BB1E35BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E45B4E4-F2EA-44E6-87A5-2960BB1E35BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E45B4E4-F2EA-44E6-87A5-2960BB1E35BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E45B4E4-F2EA-44E6-87A5-2960BB1E35BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7624961-6E1C-43D3-B0E0-C642F190F122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7624961-6E1C-43D3-B0E0-C642F190F122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7624961-6E1C-43D3-B0E0-C642F190F122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7624961-6E1C-43D3-B0E0-C642F190F122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A1E371-C01C-417E-A0AD-43369E4DAA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A1E371-C01C-417E-A0AD-43369E4DAA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A1E371-C01C-417E-A0AD-43369E4DAA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A1E371-C01C-417E-A0AD-43369E4DAA00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B382784-A017-47B2-B709-C84E350B236C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B382784-A017-47B2-B709-C84E350B236C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B382784-A017-47B2-B709-C84E350B236C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B382784-A017-47B2-B709-C84E350B236C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B3177BB-4ED4-41E3-839D-75F7D512DA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B3177BB-4ED4-41E3-839D-75F7D512DA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B3177BB-4ED4-41E3-839D-75F7D512DA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B3177BB-4ED4-41E3-839D-75F7D512DA27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

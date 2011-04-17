@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileFx.Common", "AgileFx.Common\AgileFx.Common.csproj", "{14A1E371-C01C-417E-A0AD-43369E4DAA00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileFx.ORM", "AgileFx.ORM\AgileFx.ORM.csproj", "{C7624961-6E1C-43D3-B0E0-C642F190F122}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgileFx.ORM.Tests", "AgileFx.ORM.Tests\AgileFx.ORM.Tests.csproj", "{97A69DBD-BB35-4465-A0B0-780E735B5FCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DDDB5C82-68E3-42D9-AC5F-6E9F4C62DC56}"
+	ProjectSection(SolutionItems) = preProject
+		AgileFx.vsmdi = AgileFx.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extras", "Extras", "{7F60BAAB-913F-452F-B2A3-95D92FA124E9}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = AgileFx.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14A1E371-C01C-417E-A0AD-43369E4DAA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A1E371-C01C-417E-A0AD-43369E4DAA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A1E371-C01C-417E-A0AD-43369E4DAA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A1E371-C01C-417E-A0AD-43369E4DAA00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7624961-6E1C-43D3-B0E0-C642F190F122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7624961-6E1C-43D3-B0E0-C642F190F122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7624961-6E1C-43D3-B0E0-C642F190F122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7624961-6E1C-43D3-B0E0-C642F190F122}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97A69DBD-BB35-4465-A0B0-780E735B5FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A69DBD-BB35-4465-A0B0-780E735B5FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A69DBD-BB35-4465-A0B0-780E735B5FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97A69DBD-BB35-4465-A0B0-780E735B5FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

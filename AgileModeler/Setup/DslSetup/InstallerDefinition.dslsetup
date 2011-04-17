@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+This file is a manifest that defines how a domain-specific language is installed. The text template files 
+(.tt) in this project use the information in this file to generate WiX files (.wxs). When the project is 
+built, these WiX files are compiled into an MSI package. To deploy this package, copy all of the files 
+from the project output directory to the target computer, and run the MSI file.
+
+Some values in this file are copied from the domain-specific language definition (.dsl).
+If the .dsl file could not be found, you will need to edit this manifest to correct values for some attributes.
+For more specific information, see the Error List window.
+-->
+<installerDefinition xmlns="http://schemas.microsoft.com/VisualStudio/2005/DslTools/InstallerDefinitionModel" 
+  productUrl="http://www.agilefx.org"
+  defaultDirectoryName="AgileHead\AgileModeler for VS2008"
+  productVersion="1.0.0"
+  requiresCSharp="true"
+  requiresVisualBasic="false"
+  productCode="1c06beda-a5b2-42a3-9f12-10fafb4f22ba"
+  upgradeCode="f8c72274-8bba-4b95-8114-2bb146fff720"
+  localeId="1033">
+	<dslPackage name="AgileModeler" project="DslPackage" assemblyPath="AgileFx.AgileModeler.DslPackage.dll" registryRoot="SOFTWARE\Microsoft\VisualStudio\9.0">
+		<fileExtensions>
+			<fileExtension name="models" extension="models" descriptionKey="FileDescription" hasIcon="true" iconId="0"/>
+		</fileExtensions>
+		<supportingAssemblies>
+      <supportingAssembly name="Dsl" project="Dsl" assemblyPath="AgileFx.AgileModeler.Dsl.dll"/>
+      <supportingAssembly name="ItemWizard" project="ItemWizard" assemblyPath="AgileFx.AgileModeler.ItemWizard.dll"/>
+      <supportingAssembly name="AgileFx.Common" project="AgileFx.Common" assemblyPath="AgileFx.Common.dll"/>
+      <supportingAssembly name="AgileFx.ORM" project="AgileFx.ORM" assemblyPath="AgileFx.ORM.dll"/>
+    </supportingAssemblies>
+	</dslPackage>
+	<licenseAgreement filePath="Files\EULA.rtf" isEmbedded="true" />
+	<supportingFiles>
+		<supportingFile name="Readme" filePath="Files\Readme.htm" isEmbedded="true" installShortcut="true" shortcutIconPath="Resources\ReadmeShortcut.ico" openAfterInstall="true" />
+    <supportingFile name="AutomaticUpdate" project="AutomaticUpdate" isEmbedded="true" filePath="AutomaticUpdate.exe" installShortcut="true" shortcutIconPath="..\..\Resources\automaticupdate.ico" openAfterInstall="false" />
+	</supportingFiles>
+	<vsItemTemplates>
+		<vsItemTemplate localeId="1033" targetDirectories="CSharp\Data" project="DslSetup" templatePath="..\..\Files\DomainModel.zip"/>
+		<!--<vsItemTemplate localeId="1033" targetDirectories="VisualBasic" project="DslPackage" templatePath="VisualBasic\1033\AgileModeler.zip"/>-->
+	</vsItemTemplates>
+	<dslSchemas>
+		<dslSchema project="Dsl" filePath="GeneratedCode\AgileModelerSchema.xsd"/>
+	</dslSchemas>
+</installerDefinition>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database Name="TaskometerDb" Class="TaskometerDb_LinqToSqlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="ConnectionString" ConnectionString="Data Source=.;Initial Catalog=TaskometerDb;Integrated Security=True;Connect Timeout=10;User Instance=False" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Account" Member="Account">
+    <Type Name="Account">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DateLastLogin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Provider" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ProviderType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Account_AccountRoleMap" Member="AccountRoleMap" ThisKey="Id" OtherKey="Account" Type="AccountRoleMap" />
+      <Association Name="FK_Account_Tenant_Tenant_Accounts" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_User_Account_Account_User_OneToOne" Member="User" Type="User" ThisKey="Id" OtherKey="AccountId" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Category" Member="Category">
+    <Type Name="Category">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="IsRoot" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Parent" Type="System.Int64" DbType="BigInt" CanBeNull="true" Member="ParentId" />
+      <Column Name="PermissionSet" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="PermissionSetId" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Column Name="UniquePath" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="UrlAlias" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Website" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="WebsiteId" />
+      <Column Name="DefaultPage" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="FK_Category_PermissionSet_PermissionSet_Category_OneToOne" Member="PermissionSet" Type="PermissionSet" ThisKey="PermissionSetId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Category_Tenant_Tenant_Categories" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Category_Website_Website_Categories" Member="Website" Type="Website" ThisKey="WebsiteId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Page_Category_Category_Pages" Member="Pages" Type="Page" ThisKey="Id" OtherKey="CategoryId" />
+      <Association Name="FK_Category_Parent_Category_ChildCategories" Member="ChildCategories" Type="Category" ThisKey="Id" OtherKey="ParentId" />
+      <Association Name="FK_Category_Parent_Category_ChildCategories" Member="Parent" Type="Category" ThisKey="ParentId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comment" Member="Comment">
+    <Type Name="Comment">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="AddedBy" Type="System.Int64" DbType="BigInt" CanBeNull="true" Member="AddedById" />
+      <Column Name="AddedByDisplayName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="AddedByEmail" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="AddedByWebsite" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="AddedOn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Body" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsApproved" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Page" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="PageId" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Column Name="IPAddress" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Association Name="FK_Comment_Page_Page_Comments" Member="Page" Type="Page" ThisKey="PageId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Comment_Tenant_Tenant_Comments" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Comment_AddedBy_User_Comments" Member="AddedBy" Type="User" ThisKey="AddedById" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Control" Member="Control">
+    <Type Name="Control">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="VirtualPath" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="Control_TemplateControlMap" Member="TemplateControlMap" ThisKey="Id" OtherKey="Control" Type="TemplateControlMap" />
+    </Type>
+  </Table>
+  <Table Name="dbo.File" Member="File">
+    <Type Name="File">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Filename" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="PermissionSet" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="PermissionSetId" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="FK_File_PermissionSet_PermissionSet_File_OneToOne" Member="PermissionSet" Type="PermissionSet" ThisKey="PermissionSetId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_File_Tenant_Tenant_Files" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IssuesPortal" Member="IssuesPortal">
+    <Type Name="IssuesPortal">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Domain" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Association Name="FK_IssuesPortal_Tenant_Tenant_IssuesPortal_OneToOne" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Meta" Member="Meta">
+    <Type Name="Meta">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Column Name="Text" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Website" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="WebsiteId" />
+      <Association Name="FK_Meta_Tenant_Tenant_Metas" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Meta_Website_Website_Meta" Member="Website" Type="Website" ThisKey="WebsiteId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Page" Member="Page">
+    <Type Name="Page">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="AllowComments" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Author" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="AuthorId" />
+      <Column Name="Category" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="CategoryId" />
+      <Column Name="ContentType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayTemplate" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="DisplayTemplateId" />
+      <Column Name="Excerpt" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Html" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MainContentHtml" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PermissionSet" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="PermissionSetId" />
+      <Column Name="Syndicate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tags" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="UniquePath" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="FK_Comment_Page_Page_Comments" Member="Comments" Type="Comment" ThisKey="Id" OtherKey="PageId" />
+      <Association Name="FK_Revision_Page_Page_Revisions" Member="Revisions" Type="Revision" ThisKey="Id" OtherKey="PageId" />
+      <Association Name="FK_Page_PermissionSet_PermissionSet_Page_OneToOne" Member="PermissionSet" Type="PermissionSet" ThisKey="PermissionSetId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Page_DisplayTemplate_Template_Pages" Member="DisplayTemplate" Type="Template" ThisKey="DisplayTemplateId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Page_Tenant_Tenant_Pages" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Page_Author_User_Pages" Member="Author" Type="User" ThisKey="AuthorId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Page_Category_Category_Pages" Member="Category" Type="Category" ThisKey="CategoryId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Permission" Member="Permission">
+    <Type Name="Permission">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Assignee" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="AssigneeType" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Edit" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PermissionSet" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="PermissionSetId" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Column Name="View" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="FK_Permission_PermissionSet_PermissionSet_Permissions" Member="PermissionSet" Type="PermissionSet" ThisKey="PermissionSetId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Permission_Tenant_Tenant_Permissions" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PermissionSet" Member="PermissionSet">
+    <Type Name="PermissionSet">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Association Name="FK_File_PermissionSet_PermissionSet_File_OneToOne" Member="File" Type="File" ThisKey="Id" OtherKey="PermissionSetId" Cardinality="One" />
+      <Association Name="FK_Page_PermissionSet_PermissionSet_Page_OneToOne" Member="Page" Type="Page" ThisKey="Id" OtherKey="PermissionSetId" Cardinality="One" />
+      <Association Name="FK_Category_PermissionSet_PermissionSet_Category_OneToOne" Member="Category" Type="Category" ThisKey="Id" OtherKey="PermissionSetId" Cardinality="One" />
+      <Association Name="FK_Permission_PermissionSet_PermissionSet_Permissions" Member="Permissions" Type="Permission" ThisKey="Id" OtherKey="PermissionSetId" />
+      <Association Name="FK_PermissionSet_Tenant_Tenant_PermissionSets" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProjectPortal" Member="ProjectPortal">
+    <Type Name="ProjectPortal">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Domain" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Association Name="FK_ProjectPortal_Tenant_Tenant_ProjectPortal_OneToOne" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Revision" Member="Revision">
+    <Type Name="Revision">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Contents" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Html" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MainContentHtml" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Page" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="PageId" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Association Name="FK_Revision_Page_Page_Revisions" Member="Page" Type="Page" ThisKey="PageId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Revision_Tenant_Tenant_Revisions" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Role">
+    <Type Name="Role">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Association Name="Role_AccountRoleMap" Member="AccountRoleMap" ThisKey="Id" OtherKey="Role" Type="AccountRoleMap" />
+      <Association Name="FK_Role_Tenant_Tenant_Roles" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Template" Member="Template">
+    <Type Name="Template">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Html" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Placeholders" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Column Name="Website" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="WebsiteId" />
+      <Association Name="Template_TemplateControlMap" Member="TemplateControlMap" ThisKey="Id" OtherKey="Template" Type="TemplateControlMap" />
+      <Association Name="FK_Page_DisplayTemplate_Template_Pages" Member="Pages" Type="Page" ThisKey="Id" OtherKey="DisplayTemplateId" />
+      <Association Name="FK_Template_Tenant_Tenant_Templates" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Template_Website_Website_Templates" Member="Website" Type="Website" ThisKey="WebsiteId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tenant" Member="Tenant">
+    <Type Name="Tenant">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Domain" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Logo" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Plan" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Timezone" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="FK_Revision_Tenant_Tenant_Revisions" Member="Revisions" Type="Revision" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_Website_Tenant_Tenant_Websites" Member="Websites" Type="Website" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_File_Tenant_Tenant_Files" Member="Files" Type="File" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_IssuesPortal_Tenant_Tenant_IssuesPortal_OneToOne" Member="IssuesPortal" Type="IssuesPortal" ThisKey="Id" OtherKey="TenantId" Cardinality="One" />
+      <Association Name="FK_User_Tenant_Tenant_Users" Member="Users" Type="User" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_ProjectPortal_Tenant_Tenant_ProjectPortal_OneToOne" Member="ProjectPortal" Type="ProjectPortal" ThisKey="Id" OtherKey="TenantId" Cardinality="One" />
+      <Association Name="FK_PermissionSet_Tenant_Tenant_PermissionSets" Member="PermissionSets" Type="PermissionSet" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_Template_Tenant_Tenant_Templates" Member="Templates" Type="Template" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_Comment_Tenant_Tenant_Comments" Member="Comments" Type="Comment" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_Account_Tenant_Tenant_Accounts" Member="Accounts" Type="Account" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_Category_Tenant_Tenant_Categories" Member="Categories" Type="Category" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_Page_Tenant_Tenant_Pages" Member="Pages" Type="Page" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_Role_Tenant_Tenant_Roles" Member="Roles" Type="Role" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_Permission_Tenant_Tenant_Permissions" Member="Permissions" Type="Permission" ThisKey="Id" OtherKey="TenantId" />
+      <Association Name="FK_Meta_Tenant_Tenant_Metas" Member="Metas" Type="Meta" ThisKey="Id" OtherKey="TenantId" />
+    </Type>
+  </Table>
+  <Table Name="dbo.User" Member="User">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Account" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="AccountId" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Association Name="FK_User_Tenant_Tenant_Users" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Page_Author_User_Pages" Member="Pages" Type="Page" ThisKey="Id" OtherKey="AuthorId" />
+      <Association Name="FK_Comment_AddedBy_User_Comments" Member="Comments" Type="Comment" ThisKey="Id" OtherKey="AddedById" />
+      <Association Name="FK_User_Account_Account_User_OneToOne" Member="Account" Type="Account" ThisKey="AccountId" OtherKey="Id" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Website" Member="Website">
+    <Type Name="Website">
+      <Column Name="Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" CanBeNull="false" IsPrimaryKey="true" IsDbGenerated="true" />
+      <Column Name="Domain" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Path" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Tenant" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" Member="TenantId" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="FK_Website_Tenant_Tenant_Websites" Member="Tenant" Type="Tenant" ThisKey="TenantId" OtherKey="Id" IsForeignKey="true" />
+      <Association Name="FK_Meta_Website_Website_Meta" Member="Meta" Type="Meta" ThisKey="Id" OtherKey="WebsiteId" />
+      <Association Name="FK_Template_Website_Website_Templates" Member="Templates" Type="Template" ThisKey="Id" OtherKey="WebsiteId" />
+      <Association Name="FK_Category_Website_Website_Categories" Member="Categories" Type="Category" ThisKey="Id" OtherKey="WebsiteId" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccountRoleMap" Member="AccountRoleMap">
+    <Type Name="AccountRoleMap">
+      <Column Name="Account" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" CanBeNull="false" Member="AccountId" />
+      <Column Name="Role" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" CanBeNull="false" Member="RoleId" />
+      <Association Name="Account_AccountRoleMap" Member="Account" ThisKey="AccountId" OtherKey="Id" Type="Account" IsForeignKey="true" />
+      <Association Name="Role_AccountRoleMap" Member="Role" ThisKey="RoleId" OtherKey="Id" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TemplateControlMap" Member="TemplateControlMap">
+    <Type Name="TemplateControlMap">
+      <Column Name="Control" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" CanBeNull="false" Member="ControlId" />
+      <Column Name="Template" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" CanBeNull="false" Member="TemplateId" />
+      <Association Name="Control_TemplateControlMap" Member="Control" ThisKey="ControlId" OtherKey="Id" Type="Control" IsForeignKey="true" />
+      <Association Name="Template_TemplateControlMap" Member="Template" ThisKey="TemplateId" OtherKey="Id" Type="Template" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

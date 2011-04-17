@@ -1,0 +1,9 @@
+D:\projects\AgileFx\AgileFx\AgileFx.ORM.Tests\bin\Debug\AgileFx.ORM.Tests.dll
+D:\projects\AgileFx\AgileFx\AgileFx.ORM.Tests\bin\Debug\AgileFx.ORM.Tests.pdb
+D:\projects\AgileFx\AgileFx\AgileFx.ORM.Tests\bin\Debug\AgileFx.Common.dll
+D:\projects\AgileFx\AgileFx\AgileFx.ORM.Tests\bin\Debug\AgileFx.ORM.dll
+D:\projects\AgileFx\AgileFx\AgileFx.ORM.Tests\bin\Debug\AgileFx.ORM.pdb
+D:\projects\AgileFx\AgileFx\AgileFx.ORM.Tests\bin\Debug\AgileFx.Common.pdb
+D:\projects\AgileFx\AgileFx\AgileFx.ORM.Tests\obj\Debug\ResolveAssemblyReference.cache
+D:\projects\AgileFx\AgileFx\AgileFx.ORM.Tests\obj\Debug\AgileFx.ORM.Tests.dll
+D:\projects\AgileFx\AgileFx\AgileFx.ORM.Tests\obj\Debug\AgileFx.ORM.Tests.pdb

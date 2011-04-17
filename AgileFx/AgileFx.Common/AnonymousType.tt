@@ -1,0 +1,63 @@
+﻿/* AgileFx Version 2.0
+ * An open-source framework for rapid development of applications and services using Microsoft.net
+ * Developed by: AgileHead
+ * Website: www.agilefx.org
+ * This component is licensed under the terms of the Apache 2.0 License.
+ */
+<# int ARG_COUNT = 50; #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Reflection;
+
+namespace AgileFx
+{
+    public abstract class AnonymousType
+    {
+        List<int> initializedFieldIndexes = new List<int>();
+        public List<int> InitializedFieldIndexes { get { return initializedFieldIndexes; } }
+
+        public static Type GetGenericType(int numFields)
+        {
+            switch (numFields)
+            {
+<# for (int i = 0; i < ARG_COUNT; i++) 
+{ #>			
+                case <#= i+1 #>:
+                    return typeof(AnonymousType<<#= "".PadLeft(i, ',') #>>);
+<# } #>
+				default:
+					throw new NotSupportedException("The number of fields exceed that supported with AnonymousType.");
+            }
+        }
+
+        public abstract List<object> GetValues();
+
+        public static PropertyInfo GetPropertyByIndex(Type type, int index)
+        {
+            return type.GetProperty("Field" + index.ToString());
+        }
+    }
+<#  for (int i = 0; i < ARG_COUNT; i++)
+	{	
+#>
+	public class AnonymousType<T0<# for (int  j = 0; j < i; j++) { #>, T<#= j+1 #><# } #>> : AnonymousType
+    {
+<#  for (int j = 0; j <= i; j++) 
+{ 
+#>		T<#= j #> field<#= j #>;
+        public T<#= j #> Field<#= j #>
+        {
+            get { return field<#= j #>; }
+            set { field<#= j #> = value; InitializedFieldIndexes.Add(<#= j #>); }
+        }
+<# 	} 
+#>      
+		public override List<object> GetValues()
+        {
+            return new List<object>() { field0<# for (int  j = 0; j < i; j++) { #>, field<#= j+1 #><# } #> };
+        }
+    }
+<# 	} #>
+}

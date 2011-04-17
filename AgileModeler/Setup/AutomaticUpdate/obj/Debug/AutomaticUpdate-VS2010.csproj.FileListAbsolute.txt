@@ -1,0 +1,9 @@
+D:\projects\AgileFx\AgileModeler\Setup\AutomaticUpdate\bin\Debug\AutomaticUpdate.exe
+D:\projects\AgileFx\AgileModeler\Setup\AutomaticUpdate\bin\Debug\AutomaticUpdate.pdb
+D:\projects\AgileFx\AgileModeler\Setup\AutomaticUpdate\obj\Debug\ResolveAssemblyReference.cache
+D:\projects\AgileFx\AgileModeler\Setup\AutomaticUpdate\obj\Debug\AutomaticUpdate.UpdateForm.resources
+D:\projects\AgileFx\AgileModeler\Setup\AutomaticUpdate\obj\Debug\AutomaticUpdate.Properties.Resources.resources
+D:\projects\AgileFx\AgileModeler\Setup\AutomaticUpdate\obj\Debug\ResGen.read.1.tlog
+D:\projects\AgileFx\AgileModeler\Setup\AutomaticUpdate\obj\Debug\ResGen.write.1.tlog
+D:\projects\AgileFx\AgileModeler\Setup\AutomaticUpdate\obj\Debug\AutomaticUpdate.exe
+D:\projects\AgileFx\AgileModeler\Setup\AutomaticUpdate\obj\Debug\AutomaticUpdate.pdb

@@ -1,0 +1,10 @@
+Source is a copy of http://iqtoolkit.codeplex.com/, published by mattwar.
+More at: http://blogs.msdn.com/mattwar/
+
+This folder contains the IQTookit release used in the latest AgileFx distribution. It is included so that developers can download the corresponding IQTookit release with a single checkout. 
+
+Note that the licenses for IQTookit are different from AgileFx (MsPL vs Apache 2.0). However, they are both open-source and not in conflict.
+
+Special thanks to Matt for the awesome toolkit.
+
+-- AgileFx Team.

@@ -1,0 +1,50 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link href="/Styles/site.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/jquery-ui/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="/scripts/jquery.js"></script>
+    
+    <script type="text/javascript" src="/scripts/jquery-ui.js"></script>
+    
+    <script type="text/javascript" src="/Scripts/Class-0.0.2.min.js"></script>
+
+    <script type="text/javascript" src="/Scripts/AgileFx.js"></script>
+
+    <script type="text/javascript" src="/Scripts/base.js"></script>
+
+    <script type="text/javascript" src="/scripts/taskometer.js"></script>
+
+</head>
+<body class="site hasFooter">
+    <div id="frame">
+        <div class="header">
+            <div class="contents">
+                <div class="logo">
+                    <a href="/">
+                        <img src="/images/taskometer-icon.png" alt="Taskometer" /></a></div>
+                <asp:ContentPlaceHolder ID="MenuContent" runat="server" />
+            </div>
+        </div>
+        <div class="pageContent">
+            <asp:ContentPlaceHolder ID="PageContent" runat="server" />
+            <div class="clearFooter">
+            </div>
+        </div>
+        <div class="footer">
+            <p class="content">
+                Taskometer is a product of <a href="http://www.agilehead.com">AgileHead</a>. It
+                is proudly <a href="http://agilefx.codeplex.com">open source</a>. <span style="color: rgb(255, 153, 51);">
+                    Made</span> <span style="color: rgb(170, 170, 170);">in</span> <span style="color: rgb(19, 136, 8);">
+                        India</span>.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+D:\projects\AgileFx\AgileFx\Releases\v4.0\AgileFx.Common.dll
+D:\projects\AgileFx\AgileFx\Releases\v4.0\AgileFx.Common.pdb
+D:\projects\AgileFx\AgileFx\AgileFx.Common\obj\Release\ResolveAssemblyReference.cache
+D:\projects\AgileFx\AgileFx\AgileFx.Common\obj\Release\AgileFx.Common.dll
+D:\projects\AgileFx\AgileFx\AgileFx.Common\obj\Release\AgileFx.Common.pdb

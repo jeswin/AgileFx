@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelRoot dslVersion="1.0.0.0" name="" connectionString="Data Source=.;Initial Catalog=TaskometerDb;Integrated Security=True;Connect Timeout=10;User Instance=False" xmlns="http://schemas.microsoft.com/dsltools/AgileModeler">
+  <types>
+    <modelClass name="Account" tableName="Account" derivesOrImplements="EntityBase">
+      <targets>
+        <association Id="19d2d626-fd3b-415c-849e-f14b0493d9c1" end1Multiplicity="ZeroMany" end1RoleName="Account" end2RoleName="Role" end1NavigationProperty="Roles" end2NavigationProperty="Accounts" name="AccountRoleMap" manyToManyMappingTable="AccountRoleMap" end1ManyToManyMappingColumn="Account" end2ManyToManyMappingColumn="Role" isEdited="false" end1ManyToManyNavigationProperty="Account" end2ManyToManyNavigationProperty="Role" end1ManyToManyFieldName="AccountId" end2ManyToManyFieldName="RoleId">
+          <modelClassMoniker name="//Role" />
+        </association>
+        <association Id="51e5dcb6-888f-45e3-8e10-4e71620cc544" end1RoleName="Account" end2Multiplicity="One" end2RoleName="User" end1NavigationProperty="User" end2NavigationProperty="Account" name="FK_User_Account_Account_User_OneToOne" isEdited="false">
+          <modelClassMoniker name="//User" />
+        </association>
+      </targets>
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="DateCreated" isEdited="false" isPrimaryKey="false" databaseColumnName="DateCreated" nullable="false" type="DateTime" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="DateLastLogin" isEdited="false" isPrimaryKey="false" databaseColumnName="DateLastLogin" nullable="false" type="DateTime" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="Password" isEdited="false" isPrimaryKey="false" databaseColumnName="Password" nullable="true" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="Provider" isEdited="false" isPrimaryKey="false" databaseColumnName="Provider" nullable="true" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="ProviderType" isEdited="false" isPrimaryKey="false" databaseColumnName="ProviderType" nullable="true" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="Status" isEdited="false" isPrimaryKey="false" databaseColumnName="Status" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="Username" isEdited="false" isPrimaryKey="false" databaseColumnName="Username" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Roles" isEdited="false" multiplicity="ZeroMany" association="AccountRoleMap" type="ICollection&lt;Role&gt;" isForeignkey="false" />
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_Account_Tenant_Tenant_Accounts" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+        <navigationProperty name="User" isEdited="false" multiplicity="One" association="FK_User_Account_Account_User_OneToOne" type="User" isForeignkey="false" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="Category" tableName="Category" derivesOrImplements="EntityBase">
+      <targets>
+        <association Id="04936c68-2053-4cf3-8fee-9ac9876abd1c" end1RoleName="Category" end2RoleName="Page" end1NavigationProperty="Pages" end2NavigationProperty="Category" name="FK_Page_Category_Category_Pages" isEdited="false">
+          <modelClassMoniker name="//Page" />
+        </association>
+        <association Id="c82891dc-647d-4a9e-97fc-bb9cafa40e7f" end1Multiplicity="ZeroOne" end1RoleName="Category" end2RoleName="Category" end1NavigationProperty="ChildCategories" end2NavigationProperty="Parent" name="FK_Category_Parent_Category_ChildCategories" isEdited="false">
+          <modelClassMoniker name="//Category" />
+        </association>
+      </targets>
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="IsRoot" isEdited="false" isPrimaryKey="false" databaseColumnName="IsRoot" nullable="false" type="Boolean" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="1" isIdentity="false" isUnique="false" />
+        <modelField name="Name" isEdited="false" isPrimaryKey="false" databaseColumnName="Name" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="ParentId" isEdited="false" isPrimaryKey="false" databaseColumnName="Parent" nullable="true" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="PermissionSetId" isEdited="false" isPrimaryKey="false" databaseColumnName="PermissionSet" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="UniquePath" isEdited="false" isPrimaryKey="false" databaseColumnName="UniquePath" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="500" isIdentity="false" isUnique="false" />
+        <modelField name="UrlAlias" isEdited="false" isPrimaryKey="false" databaseColumnName="UrlAlias" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="100" isIdentity="false" isUnique="false" />
+        <modelField name="WebsiteId" isEdited="false" isPrimaryKey="false" databaseColumnName="Website" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="DefaultPage" isEdited="false" isPrimaryKey="false" databaseColumnName="DefaultPage" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="100" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="PermissionSet" isEdited="false" multiplicity="One" association="FK_Category_PermissionSet_PermissionSet_Category_OneToOne" type="PermissionSet" isForeignkey="true" foreignkeyColumn="PermissionSet" />
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_Category_Tenant_Tenant_Categories" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+        <navigationProperty name="Website" isEdited="false" multiplicity="One" association="FK_Category_Website_Website_Categories" type="Website" isForeignkey="true" foreignkeyColumn="Website" />
+        <navigationProperty name="Pages" isEdited="false" multiplicity="ZeroMany" association="FK_Page_Category_Category_Pages" type="ICollection&lt;Page&gt;" isForeignkey="false" />
+        <navigationProperty name="ChildCategories" isEdited="false" multiplicity="ZeroMany" association="FK_Category_Parent_Category_ChildCategories" type="ICollection&lt;Category&gt;" isForeignkey="false" />
+        <navigationProperty name="Parent" isEdited="false" multiplicity="ZeroOne" association="FK_Category_Parent_Category_ChildCategories" type="Category" isForeignkey="true" foreignkeyColumn="Parent" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="Comment" tableName="Comment" derivesOrImplements="EntityBase">
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="AddedById" isEdited="false" isPrimaryKey="false" databaseColumnName="AddedBy" nullable="true" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="AddedByDisplayName" isEdited="false" isPrimaryKey="false" databaseColumnName="AddedByDisplayName" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="100" isIdentity="false" isUnique="false" />
+        <modelField name="AddedByEmail" isEdited="false" isPrimaryKey="false" databaseColumnName="AddedByEmail" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="AddedByWebsite" isEdited="false" isPrimaryKey="false" databaseColumnName="AddedByWebsite" nullable="true" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="AddedOn" isEdited="false" isPrimaryKey="false" databaseColumnName="AddedOn" nullable="false" type="DateTime" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="Body" isEdited="false" isPrimaryKey="false" databaseColumnName="Body" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="0" isIdentity="false" isUnique="false" updateCheck="Never" />
+        <modelField name="IsApproved" isEdited="false" isPrimaryKey="false" databaseColumnName="IsApproved" nullable="false" type="Boolean" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="1" isIdentity="false" isUnique="false" />
+        <modelField name="PageId" isEdited="false" isPrimaryKey="false" databaseColumnName="Page" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="IPAddress" isEdited="false" isPrimaryKey="false" databaseColumnName="IPAddress" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="25" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Page" isEdited="false" multiplicity="One" association="FK_Comment_Page_Page_Comments" type="Page" isForeignkey="true" foreignkeyColumn="Page" />
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_Comment_Tenant_Tenant_Comments" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+        <navigationProperty name="AddedBy" isEdited="false" multiplicity="ZeroOne" association="FK_Comment_AddedBy_User_Comments" type="User" isForeignkey="true" foreignkeyColumn="AddedBy" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="Control" tableName="Control" derivesOrImplements="EntityBase">
+      <targets>
+        <association Id="8270e17e-2d30-4022-9397-b9e03f7d9879" end1Multiplicity="ZeroMany" end1RoleName="Control" end2RoleName="Template" end1NavigationProperty="Templates" end2NavigationProperty="Controls" name="TemplateControlMap" manyToManyMappingTable="TemplateControlMap" end1ManyToManyMappingColumn="Control" end2ManyToManyMappingColumn="Template" isEdited="false" end1ManyToManyNavigationProperty="Control" end2ManyToManyNavigationProperty="Template" end1ManyToManyFieldName="ControlId" end2ManyToManyFieldName="TemplateId">
+          <modelClassMoniker name="//Template" />
+        </association>
+      </targets>
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="Name" isEdited="false" isPrimaryKey="false" databaseColumnName="Name" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="100" isIdentity="false" isUnique="false" />
+        <modelField name="Type" isEdited="false" isPrimaryKey="false" databaseColumnName="Type" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="100" isIdentity="false" isUnique="false" />
+        <modelField name="VirtualPath" isEdited="false" isPrimaryKey="false" databaseColumnName="VirtualPath" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="500" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Templates" isEdited="false" multiplicity="ZeroMany" association="TemplateControlMap" type="ICollection&lt;Template&gt;" isForeignkey="false" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="File" tableName="File" derivesOrImplements="EntityBase">
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="Filename" isEdited="false" isPrimaryKey="false" databaseColumnName="Filename" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="250" isIdentity="false" isUnique="false" />
+        <modelField name="PermissionSetId" isEdited="false" isPrimaryKey="false" databaseColumnName="PermissionSet" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="Title" isEdited="false" isPrimaryKey="false" databaseColumnName="Title" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="250" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="PermissionSet" isEdited="false" multiplicity="One" association="FK_File_PermissionSet_PermissionSet_File_OneToOne" type="PermissionSet" isForeignkey="true" foreignkeyColumn="PermissionSet" />
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_File_Tenant_Tenant_Files" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="IssuesPortal" tableName="IssuesPortal" derivesOrImplements="EntityBase">
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="Domain" isEdited="false" isPrimaryKey="false" databaseColumnName="Domain" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="IsActive" isEdited="false" isPrimaryKey="false" databaseColumnName="IsActive" nullable="false" type="Boolean" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="1" isIdentity="false" isUnique="false" />
+        <modelField name="Path" isEdited="false" isPrimaryKey="false" databaseColumnName="Path" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_IssuesPortal_Tenant_Tenant_IssuesPortal_OneToOne" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="Meta" tableName="Meta" derivesOrImplements="EntityBase">
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="Text" isEdited="false" isPrimaryKey="false" databaseColumnName="Text" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="100" isIdentity="false" isUnique="false" />
+        <modelField name="Url" isEdited="false" isPrimaryKey="false" databaseColumnName="Url" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="500" isIdentity="false" isUnique="false" />
+        <modelField name="WebsiteId" isEdited="false" isPrimaryKey="false" databaseColumnName="Website" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_Meta_Tenant_Tenant_Metas" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+        <navigationProperty name="Website" isEdited="false" multiplicity="One" association="FK_Meta_Website_Website_Meta" type="Website" isForeignkey="true" foreignkeyColumn="Website" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="Page" tableName="Page" derivesOrImplements="EntityBase">
+      <targets>
+        <association Id="fcdd2b81-a1ae-4ba1-8838-8b49583defdc" end1RoleName="Page" end2RoleName="Comment" end1NavigationProperty="Comments" end2NavigationProperty="Page" name="FK_Comment_Page_Page_Comments" isEdited="false">
+          <modelClassMoniker name="//Comment" />
+        </association>
+        <association Id="72c720e0-ca5a-4253-9762-9b3d6213ea1b" end1RoleName="Page" end2RoleName="Revision" end1NavigationProperty="Revisions" end2NavigationProperty="Page" name="FK_Revision_Page_Page_Revisions" isEdited="false">
+          <modelClassMoniker name="//Revision" />
+        </association>
+      </targets>
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="AllowComments" isEdited="false" isPrimaryKey="false" databaseColumnName="AllowComments" nullable="false" type="Boolean" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="1" isIdentity="false" isUnique="false" />
+        <modelField name="AuthorId" isEdited="false" isPrimaryKey="false" databaseColumnName="Author" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="CategoryId" isEdited="false" isPrimaryKey="false" databaseColumnName="Category" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="ContentType" isEdited="false" isPrimaryKey="false" databaseColumnName="ContentType" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="DateTime" isEdited="false" isPrimaryKey="false" databaseColumnName="DateTime" nullable="false" type="DateTime" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="DisplayTemplateId" isEdited="false" isPrimaryKey="false" databaseColumnName="DisplayTemplate" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="Excerpt" isEdited="false" isPrimaryKey="false" databaseColumnName="Excerpt" nullable="true" isDbGenerated="false" isFixedLength="false" maxLength="500" isIdentity="false" isUnique="false" />
+        <modelField name="Html" isEdited="false" isPrimaryKey="false" databaseColumnName="Html" nullable="true" isDbGenerated="false" isFixedLength="false" maxLength="0" isIdentity="false" isUnique="false" updateCheck="Never" />
+        <modelField name="MainContentHtml" isEdited="false" isPrimaryKey="false" databaseColumnName="MainContentHtml" nullable="true" isDbGenerated="false" isFixedLength="false" maxLength="0" isIdentity="false" isUnique="false" updateCheck="Never" />
+        <modelField name="PermissionSetId" isEdited="false" isPrimaryKey="false" databaseColumnName="PermissionSet" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="Syndicate" isEdited="false" isPrimaryKey="false" databaseColumnName="Syndicate" nullable="false" type="Boolean" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="1" isIdentity="false" isUnique="false" />
+        <modelField name="Tags" isEdited="false" isPrimaryKey="false" databaseColumnName="Tags" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="Title" isEdited="false" isPrimaryKey="false" databaseColumnName="Title" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="UniquePath" isEdited="false" isPrimaryKey="false" databaseColumnName="UniquePath" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="500" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Comments" isEdited="false" multiplicity="ZeroMany" association="FK_Comment_Page_Page_Comments" type="ICollection&lt;Comment&gt;" isForeignkey="false" />
+        <navigationProperty name="Revisions" isEdited="false" multiplicity="ZeroMany" association="FK_Revision_Page_Page_Revisions" type="ICollection&lt;Revision&gt;" isForeignkey="false" />
+        <navigationProperty name="PermissionSet" isEdited="false" multiplicity="One" association="FK_Page_PermissionSet_PermissionSet_Page_OneToOne" type="PermissionSet" isForeignkey="true" foreignkeyColumn="PermissionSet" />
+        <navigationProperty name="DisplayTemplate" isEdited="false" multiplicity="One" association="FK_Page_DisplayTemplate_Template_Pages" type="Template" isForeignkey="true" foreignkeyColumn="DisplayTemplate" />
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_Page_Tenant_Tenant_Pages" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+        <navigationProperty name="Author" isEdited="false" multiplicity="One" association="FK_Page_Author_User_Pages" type="User" isForeignkey="true" foreignkeyColumn="Author" />
+        <navigationProperty name="Category" isEdited="false" multiplicity="One" association="FK_Page_Category_Category_Pages" type="Category" isForeignkey="true" foreignkeyColumn="Category" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="Permission" tableName="Permission" derivesOrImplements="EntityBase">
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="Assignee" isEdited="false" isPrimaryKey="false" databaseColumnName="Assignee" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="AssigneeType" isEdited="false" isPrimaryKey="false" databaseColumnName="AssigneeType" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="Edit" isEdited="false" isPrimaryKey="false" databaseColumnName="Edit" nullable="false" type="Boolean" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="1" isIdentity="false" isUnique="false" />
+        <modelField name="PermissionSetId" isEdited="false" isPrimaryKey="false" databaseColumnName="PermissionSet" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="View" isEdited="false" isPrimaryKey="false" databaseColumnName="View" nullable="false" type="Boolean" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="1" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="PermissionSet" isEdited="false" multiplicity="One" association="FK_Permission_PermissionSet_PermissionSet_Permissions" type="PermissionSet" isForeignkey="true" foreignkeyColumn="PermissionSet" />
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_Permission_Tenant_Tenant_Permissions" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="PermissionSet" tableName="PermissionSet" derivesOrImplements="EntityBase">
+      <targets>
+        <association Id="afff00a3-aea7-436a-8d45-1481b8e33dbf" end1RoleName="PermissionSet" end2Multiplicity="One" end2RoleName="File" end1NavigationProperty="File" end2NavigationProperty="PermissionSet" name="FK_File_PermissionSet_PermissionSet_File_OneToOne" isEdited="false">
+          <modelClassMoniker name="//File" />
+        </association>
+        <association Id="d0cbd206-a67d-4d25-aef2-69d745f100ee" end1RoleName="PermissionSet" end2Multiplicity="One" end2RoleName="Page" end1NavigationProperty="Page" end2NavigationProperty="PermissionSet" name="FK_Page_PermissionSet_PermissionSet_Page_OneToOne" isEdited="false">
+          <modelClassMoniker name="//Page" />
+        </association>
+        <association Id="221b4df2-56c2-4457-81be-e6f893125883" end1RoleName="PermissionSet" end2Multiplicity="One" end2RoleName="Category" end1NavigationProperty="Category" end2NavigationProperty="PermissionSet" name="FK_Category_PermissionSet_PermissionSet_Category_OneToOne" isEdited="false">
+          <modelClassMoniker name="//Category" />
+        </association>
+        <association Id="f0a27ba2-5372-4e25-aa45-ad3ed42673de" end1RoleName="PermissionSet" end2RoleName="Permission" end1NavigationProperty="Permissions" end2NavigationProperty="PermissionSet" name="FK_Permission_PermissionSet_PermissionSet_Permissions" isEdited="false">
+          <modelClassMoniker name="//Permission" />
+        </association>
+      </targets>
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="File" isEdited="false" multiplicity="One" association="FK_File_PermissionSet_PermissionSet_File_OneToOne" type="File" isForeignkey="false" />
+        <navigationProperty name="Page" isEdited="false" multiplicity="One" association="FK_Page_PermissionSet_PermissionSet_Page_OneToOne" type="Page" isForeignkey="false" />
+        <navigationProperty name="Category" isEdited="false" multiplicity="One" association="FK_Category_PermissionSet_PermissionSet_Category_OneToOne" type="Category" isForeignkey="false" />
+        <navigationProperty name="Permissions" isEdited="false" multiplicity="ZeroMany" association="FK_Permission_PermissionSet_PermissionSet_Permissions" type="ICollection&lt;Permission&gt;" isForeignkey="false" />
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_PermissionSet_Tenant_Tenant_PermissionSets" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="ProjectPortal" tableName="ProjectPortal" derivesOrImplements="EntityBase">
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="Domain" isEdited="false" isPrimaryKey="false" databaseColumnName="Domain" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="IsActive" isEdited="false" isPrimaryKey="false" databaseColumnName="IsActive" nullable="false" type="Boolean" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="1" isIdentity="false" isUnique="false" />
+        <modelField name="Path" isEdited="false" isPrimaryKey="false" databaseColumnName="Path" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_ProjectPortal_Tenant_Tenant_ProjectPortal_OneToOne" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="Revision" tableName="Revision" derivesOrImplements="EntityBase">
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="Contents" isEdited="false" isPrimaryKey="false" databaseColumnName="Contents" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="0" isIdentity="false" isUnique="false" updateCheck="Never" />
+        <modelField name="DateTime" isEdited="false" isPrimaryKey="false" databaseColumnName="DateTime" nullable="false" type="DateTime" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="Html" isEdited="false" isPrimaryKey="false" databaseColumnName="Html" nullable="true" isDbGenerated="false" isFixedLength="false" maxLength="0" isIdentity="false" isUnique="false" updateCheck="Never" />
+        <modelField name="MainContentHtml" isEdited="false" isPrimaryKey="false" databaseColumnName="MainContentHtml" nullable="true" isDbGenerated="false" isFixedLength="false" maxLength="0" isIdentity="false" isUnique="false" updateCheck="Never" />
+        <modelField name="PageId" isEdited="false" isPrimaryKey="false" databaseColumnName="Page" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Page" isEdited="false" multiplicity="One" association="FK_Revision_Page_Page_Revisions" type="Page" isForeignkey="true" foreignkeyColumn="Page" />
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_Revision_Tenant_Tenant_Revisions" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="Role" tableName="Role" derivesOrImplements="EntityBase">
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="Name" isEdited="false" isPrimaryKey="false" databaseColumnName="Name" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Accounts" isEdited="false" multiplicity="ZeroMany" association="AccountRoleMap" type="ICollection&lt;Account&gt;" isForeignkey="false" />
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_Role_Tenant_Tenant_Roles" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="Template" tableName="Template" derivesOrImplements="EntityBase">
+      <targets>
+        <association Id="4171ee0b-ecd4-4986-b039-e6c4b7a4ef31" end1RoleName="Template" end2RoleName="Page" end1NavigationProperty="Pages" end2NavigationProperty="DisplayTemplate" name="FK_Page_DisplayTemplate_Template_Pages" isEdited="false">
+          <modelClassMoniker name="//Page" />
+        </association>
+      </targets>
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="Html" isEdited="false" isPrimaryKey="false" databaseColumnName="Html" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="0" isIdentity="false" isUnique="false" updateCheck="Never" />
+        <modelField name="Name" isEdited="false" isPrimaryKey="false" databaseColumnName="Name" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="Placeholders" isEdited="false" isPrimaryKey="false" databaseColumnName="Placeholders" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="0" isIdentity="false" isUnique="false" updateCheck="Never" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="WebsiteId" isEdited="false" isPrimaryKey="false" databaseColumnName="Website" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Controls" isEdited="false" multiplicity="ZeroMany" association="TemplateControlMap" type="ICollection&lt;Control&gt;" isForeignkey="false" />
+        <navigationProperty name="Pages" isEdited="false" multiplicity="ZeroMany" association="FK_Page_DisplayTemplate_Template_Pages" type="ICollection&lt;Page&gt;" isForeignkey="false" />
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_Template_Tenant_Tenant_Templates" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+        <navigationProperty name="Website" isEdited="false" multiplicity="One" association="FK_Template_Website_Website_Templates" type="Website" isForeignkey="true" foreignkeyColumn="Website" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="Tenant" tableName="Tenant" derivesOrImplements="EntityBase">
+      <targets>
+        <association Id="1a41b0a5-1281-4ac7-95d0-2ce83c5e189b" end1RoleName="Tenant" end2RoleName="Revision" end1NavigationProperty="Revisions" end2NavigationProperty="Tenant" name="FK_Revision_Tenant_Tenant_Revisions" isEdited="false">
+          <modelClassMoniker name="//Revision" />
+        </association>
+        <association Id="48265a79-688e-45be-aa48-0f0b6b619fa2" end1RoleName="Tenant" end2RoleName="Website" end1NavigationProperty="Websites" end2NavigationProperty="Tenant" name="FK_Website_Tenant_Tenant_Websites" isEdited="false">
+          <modelClassMoniker name="//Website" />
+        </association>
+        <association Id="15950cab-d0e3-4f4d-b653-ba1202001432" end1RoleName="Tenant" end2RoleName="File" end1NavigationProperty="Files" end2NavigationProperty="Tenant" name="FK_File_Tenant_Tenant_Files" isEdited="false">
+          <modelClassMoniker name="//File" />
+        </association>
+        <association Id="5c05c661-2443-4d70-b46f-d72be4eb22b6" end1RoleName="Tenant" end2Multiplicity="One" end2RoleName="IssuesPortal" end1NavigationProperty="IssuesPortal" end2NavigationProperty="Tenant" name="FK_IssuesPortal_Tenant_Tenant_IssuesPortal_OneToOne" isEdited="false">
+          <modelClassMoniker name="//IssuesPortal" />
+        </association>
+        <association Id="687787b9-5cab-4b6e-8a1c-096be7f283d7" end1RoleName="Tenant" end2RoleName="User" end1NavigationProperty="Users" end2NavigationProperty="Tenant" name="FK_User_Tenant_Tenant_Users" isEdited="false">
+          <modelClassMoniker name="//User" />
+        </association>
+        <association Id="831a333c-44e1-4cf3-a6ed-e0b8640da340" end1RoleName="Tenant" end2Multiplicity="One" end2RoleName="ProjectPortal" end1NavigationProperty="ProjectPortal" end2NavigationProperty="Tenant" name="FK_ProjectPortal_Tenant_Tenant_ProjectPortal_OneToOne" isEdited="false">
+          <modelClassMoniker name="//ProjectPortal" />
+        </association>
+        <association Id="041b47cf-637a-4e96-b48b-b9012536dce1" end1RoleName="Tenant" end2RoleName="PermissionSet" end1NavigationProperty="PermissionSets" end2NavigationProperty="Tenant" name="FK_PermissionSet_Tenant_Tenant_PermissionSets" isEdited="false">
+          <modelClassMoniker name="//PermissionSet" />
+        </association>
+        <association Id="a74596dc-0360-41e5-b460-02b7a7ea16b0" end1RoleName="Tenant" end2RoleName="Template" end1NavigationProperty="Templates" end2NavigationProperty="Tenant" name="FK_Template_Tenant_Tenant_Templates" isEdited="false">
+          <modelClassMoniker name="//Template" />
+        </association>
+        <association Id="801cc93b-b81d-43fc-8d6e-a2aef57974a9" end1RoleName="Tenant" end2RoleName="Comment" end1NavigationProperty="Comments" end2NavigationProperty="Tenant" name="FK_Comment_Tenant_Tenant_Comments" isEdited="false">
+          <modelClassMoniker name="//Comment" />
+        </association>
+        <association Id="872bb05c-1b47-4254-8da7-3cafa72cd5dd" end1RoleName="Tenant" end2RoleName="Account" end1NavigationProperty="Accounts" end2NavigationProperty="Tenant" name="FK_Account_Tenant_Tenant_Accounts" isEdited="false">
+          <modelClassMoniker name="//Account" />
+        </association>
+        <association Id="2c9f2cd3-b21f-46fd-93a7-789c0df8a7ad" end1RoleName="Tenant" end2RoleName="Category" end1NavigationProperty="Categories" end2NavigationProperty="Tenant" name="FK_Category_Tenant_Tenant_Categories" isEdited="false">
+          <modelClassMoniker name="//Category" />
+        </association>
+        <association Id="19fd1dd8-d1aa-41c3-a352-3c54e225cc43" end1RoleName="Tenant" end2RoleName="Page" end1NavigationProperty="Pages" end2NavigationProperty="Tenant" name="FK_Page_Tenant_Tenant_Pages" isEdited="false">
+          <modelClassMoniker name="//Page" />
+        </association>
+        <association Id="38e44230-6828-436b-8c46-d1b4f9c1a9e1" end1RoleName="Tenant" end2RoleName="Role" end1NavigationProperty="Roles" end2NavigationProperty="Tenant" name="FK_Role_Tenant_Tenant_Roles" isEdited="false">
+          <modelClassMoniker name="//Role" />
+        </association>
+        <association Id="a3d51236-482e-48d5-8502-8c7f3a1b307d" end1RoleName="Tenant" end2RoleName="Permission" end1NavigationProperty="Permissions" end2NavigationProperty="Tenant" name="FK_Permission_Tenant_Tenant_Permissions" isEdited="false">
+          <modelClassMoniker name="//Permission" />
+        </association>
+        <association Id="3a11be17-2e6a-4d22-b390-0d3574be57a9" end1RoleName="Tenant" end2RoleName="Meta" end1NavigationProperty="Metas" end2NavigationProperty="Tenant" name="FK_Meta_Tenant_Tenant_Metas" isEdited="false">
+          <modelClassMoniker name="//Meta" />
+        </association>
+      </targets>
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="Domain" isEdited="false" isPrimaryKey="false" databaseColumnName="Domain" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="Logo" isEdited="false" isPrimaryKey="false" databaseColumnName="Logo" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="250" isIdentity="false" isUnique="false" />
+        <modelField name="Name" isEdited="false" isPrimaryKey="false" databaseColumnName="Name" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="Plan" isEdited="false" isPrimaryKey="false" databaseColumnName="Plan" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="Timezone" isEdited="false" isPrimaryKey="false" databaseColumnName="Timezone" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="10" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Revisions" isEdited="false" multiplicity="ZeroMany" association="FK_Revision_Tenant_Tenant_Revisions" type="ICollection&lt;Revision&gt;" isForeignkey="false" />
+        <navigationProperty name="Websites" isEdited="false" multiplicity="ZeroMany" association="FK_Website_Tenant_Tenant_Websites" type="ICollection&lt;Website&gt;" isForeignkey="false" />
+        <navigationProperty name="Files" isEdited="false" multiplicity="ZeroMany" association="FK_File_Tenant_Tenant_Files" type="ICollection&lt;File&gt;" isForeignkey="false" />
+        <navigationProperty name="IssuesPortal" isEdited="false" multiplicity="One" association="FK_IssuesPortal_Tenant_Tenant_IssuesPortal_OneToOne" type="IssuesPortal" isForeignkey="false" />
+        <navigationProperty name="Users" isEdited="false" multiplicity="ZeroMany" association="FK_User_Tenant_Tenant_Users" type="ICollection&lt;User&gt;" isForeignkey="false" />
+        <navigationProperty name="ProjectPortal" isEdited="false" multiplicity="One" association="FK_ProjectPortal_Tenant_Tenant_ProjectPortal_OneToOne" type="ProjectPortal" isForeignkey="false" />
+        <navigationProperty name="PermissionSets" isEdited="false" multiplicity="ZeroMany" association="FK_PermissionSet_Tenant_Tenant_PermissionSets" type="ICollection&lt;PermissionSet&gt;" isForeignkey="false" />
+        <navigationProperty name="Templates" isEdited="false" multiplicity="ZeroMany" association="FK_Template_Tenant_Tenant_Templates" type="ICollection&lt;Template&gt;" isForeignkey="false" />
+        <navigationProperty name="Comments" isEdited="false" multiplicity="ZeroMany" association="FK_Comment_Tenant_Tenant_Comments" type="ICollection&lt;Comment&gt;" isForeignkey="false" />
+        <navigationProperty name="Accounts" isEdited="false" multiplicity="ZeroMany" association="FK_Account_Tenant_Tenant_Accounts" type="ICollection&lt;Account&gt;" isForeignkey="false" />
+        <navigationProperty name="Categories" isEdited="false" multiplicity="ZeroMany" association="FK_Category_Tenant_Tenant_Categories" type="ICollection&lt;Category&gt;" isForeignkey="false" />
+        <navigationProperty name="Pages" isEdited="false" multiplicity="ZeroMany" association="FK_Page_Tenant_Tenant_Pages" type="ICollection&lt;Page&gt;" isForeignkey="false" />
+        <navigationProperty name="Roles" isEdited="false" multiplicity="ZeroMany" association="FK_Role_Tenant_Tenant_Roles" type="ICollection&lt;Role&gt;" isForeignkey="false" />
+        <navigationProperty name="Permissions" isEdited="false" multiplicity="ZeroMany" association="FK_Permission_Tenant_Tenant_Permissions" type="ICollection&lt;Permission&gt;" isForeignkey="false" />
+        <navigationProperty name="Metas" isEdited="false" multiplicity="ZeroMany" association="FK_Meta_Tenant_Tenant_Metas" type="ICollection&lt;Meta&gt;" isForeignkey="false" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="User" tableName="User" derivesOrImplements="EntityBase">
+      <targets>
+        <association Id="0d9e81ac-5485-486b-8b4e-c825b2488a3a" end1RoleName="User" end2RoleName="Page" end1NavigationProperty="Pages" end2NavigationProperty="Author" name="FK_Page_Author_User_Pages" isEdited="false">
+          <modelClassMoniker name="//Page" />
+        </association>
+        <association Id="fd825501-fb81-49a5-8156-3f1bbd4d1467" end1Multiplicity="ZeroOne" end1RoleName="User" end2RoleName="Comment" end1NavigationProperty="Comments" end2NavigationProperty="AddedBy" name="FK_Comment_AddedBy_User_Comments" isEdited="false">
+          <modelClassMoniker name="//Comment" />
+        </association>
+      </targets>
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="AccountId" isEdited="false" isPrimaryKey="false" databaseColumnName="Account" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="FirstName" isEdited="false" isPrimaryKey="false" databaseColumnName="FirstName" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="LastName" isEdited="false" isPrimaryKey="false" databaseColumnName="LastName" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_User_Tenant_Tenant_Users" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+        <navigationProperty name="Pages" isEdited="false" multiplicity="ZeroMany" association="FK_Page_Author_User_Pages" type="ICollection&lt;Page&gt;" isForeignkey="false" />
+        <navigationProperty name="Comments" isEdited="false" multiplicity="ZeroMany" association="FK_Comment_AddedBy_User_Comments" type="ICollection&lt;Comment&gt;" isForeignkey="false" />
+        <navigationProperty name="Account" isEdited="false" multiplicity="One" association="FK_User_Account_Account_User_OneToOne" type="Account" isForeignkey="true" foreignkeyColumn="Account" />
+      </navigationProperties>
+    </modelClass>
+    <modelClass name="Website" tableName="Website" derivesOrImplements="EntityBase">
+      <targets>
+        <association Id="1ccde980-1fbc-4a4c-b0e2-55f715528e37" end1RoleName="Website" end2RoleName="Meta" end1NavigationProperty="Meta" end2NavigationProperty="Website" name="FK_Meta_Website_Website_Meta" isEdited="false">
+          <modelClassMoniker name="//Meta" />
+        </association>
+        <association Id="b8f136ff-3588-494c-9b01-d2c62371bbee" end1RoleName="Website" end2RoleName="Template" end1NavigationProperty="Templates" end2NavigationProperty="Website" name="FK_Template_Website_Website_Templates" isEdited="false">
+          <modelClassMoniker name="//Template" />
+        </association>
+        <association Id="f48088b3-98b3-49a0-b161-0dcda51f38a6" end1RoleName="Website" end2RoleName="Category" end1NavigationProperty="Categories" end2NavigationProperty="Website" name="FK_Category_Website_Website_Categories" isEdited="false">
+          <modelClassMoniker name="//Category" />
+        </association>
+      </targets>
+      <fields>
+        <modelField name="Id" isEdited="false" isPrimaryKey="true" databaseColumnName="Id" nullable="false" type="Int64" isDbGenerated="true" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="true" isUnique="false" />
+        <modelField name="Domain" isEdited="false" isPrimaryKey="false" databaseColumnName="Domain" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="Name" isEdited="false" isPrimaryKey="false" databaseColumnName="Name" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+        <modelField name="Path" isEdited="false" isPrimaryKey="false" databaseColumnName="Path" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="TenantId" isEdited="false" isPrimaryKey="false" databaseColumnName="Tenant" nullable="false" type="Int64" isDbGenerated="false" isFixedLength="false" isUnicode="false" maxLength="8" isIdentity="false" isUnique="false" />
+        <modelField name="Title" isEdited="false" isPrimaryKey="false" databaseColumnName="Title" nullable="false" isDbGenerated="false" isFixedLength="false" maxLength="200" isIdentity="false" isUnique="false" />
+        <modelField name="Type" isEdited="false" isPrimaryKey="false" databaseColumnName="Type" nullable="false" isDbGenerated="false" isFixedLength="false" isIdentity="false" isUnique="false" />
+      </fields>
+      <navigationProperties>
+        <navigationProperty name="Tenant" isEdited="false" multiplicity="One" association="FK_Website_Tenant_Tenant_Websites" type="Tenant" isForeignkey="true" foreignkeyColumn="Tenant" />
+        <navigationProperty name="Meta" isEdited="false" multiplicity="ZeroMany" association="FK_Meta_Website_Website_Meta" type="ICollection&lt;Meta&gt;" isForeignkey="false" />
+        <navigationProperty name="Templates" isEdited="false" multiplicity="ZeroMany" association="FK_Template_Website_Website_Templates" type="ICollection&lt;Template&gt;" isForeignkey="false" />
+        <navigationProperty name="Categories" isEdited="false" multiplicity="ZeroMany" association="FK_Category_Website_Website_Categories" type="ICollection&lt;Category&gt;" isForeignkey="false" />
+      </navigationProperties>
+    </modelClass>
+  </types>
+</modelRoot>

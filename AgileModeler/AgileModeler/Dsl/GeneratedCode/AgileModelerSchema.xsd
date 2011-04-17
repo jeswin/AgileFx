@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema id="AgileModelerSchema" targetNamespace="http://schemas.microsoft.com/dsltools/AgileModeler" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/AgileModeler" xmlns:core="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import id="CoreSchema" namespace="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" />
+  <!-- NamedElement -->
+  <xsd:element name="namedElement" abstract="true" type="NamedElement" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="NamedElement" abstract="true" >
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" use="required" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- NamedElement Moniker -->
+  <xsd:element name="namedElementMoniker" abstract="true" type="NamedElementMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="NamedElementMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for NamedElement instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="name" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelRoot -->
+  <xsd:element name="modelRoot" type="ModelRoot" substitutionGroup="namedElement" />
+  <xsd:complexType name="ModelRoot">
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: ModelRootHasTypes -->
+          <xsd:element name="types" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ModelRootHasTypes</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+                  <xsd:element ref="modelRootHasTypes">
+                    <xsd:annotation>
+                      <xsd:documentation>[Relationship deriving from ModelRootHasTypes needs to be serialized in full-form]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element ref="modelType" >
+                    <xsd:annotation>
+                      <xsd:documentation>[Target role-player]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:choice>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- dslVersion -->
+        <xsd:attribute name="dslVersion" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Version of the model serialized in this file.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Namespace -->
+        <xsd:attribute name="namespace" type="xsd:string" />
+        <!-- Property: ConnectionString -->
+        <xsd:attribute name="connectionString" type="xsd:string" />
+        <!-- Property: DataContextName -->
+        <xsd:attribute name="dataContextName" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelRoot Moniker -->
+  <xsd:element name="modelRootMoniker" type="ModelRootMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="ModelRootMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ModelRoot instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelClass -->
+  <xsd:element name="modelClass" type="ModelClass" substitutionGroup="modelType" />
+  <xsd:complexType name="ModelClass">
+    <xsd:complexContent>
+      <xsd:extension base="ModelType">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Relationship: Inheritance -->
+          <xsd:element name="subclasses" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of Inheritance</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="inheritance" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of Inheritance needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: Association -->
+          <xsd:element name="targets" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of Association</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="association" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of Association needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: ClassHasFields -->
+          <xsd:element name="fields" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ClassHasFields</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+                  <xsd:element ref="classHasFields">
+                    <xsd:annotation>
+                      <xsd:documentation>[Relationship deriving from ClassHasFields needs to be serialized in full-form]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element ref="modelField" >
+                    <xsd:annotation>
+                      <xsd:documentation>[Target role-player]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:choice>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: ClassHasNavigationProperties -->
+          <xsd:element name="navigationProperties" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of ClassHasNavigationProperties</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:choice minOccurs="0" maxOccurs="unbounded" >
+                  <xsd:element ref="classHasNavigationProperties">
+                    <xsd:annotation>
+                      <xsd:documentation>[Relationship deriving from ClassHasNavigationProperties needs to be serialized in full-form]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element ref="navigationProperty" >
+                    <xsd:annotation>
+                      <xsd:documentation>[Target role-player]</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:choice>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Property: TableName -->
+        <xsd:attribute name="tableName" type="xsd:string" />
+        <!-- Property: DerivesOrImplements -->
+        <xsd:attribute name="derivesOrImplements" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Comma separated list of base class and implemented interfaces.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelClass Moniker -->
+  <xsd:element name="modelClassMoniker" type="ModelClassMoniker" substitutionGroup="modelTypeMoniker" />
+  <xsd:complexType name="ModelClassMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ModelClass instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ModelTypeMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelFieldBase -->
+  <xsd:element name="modelFieldBase" type="ModelFieldBase" substitutionGroup="classModelElement" />
+  <xsd:complexType name="ModelFieldBase">
+    <xsd:annotation>
+      <xsd:documentation>A field of a class.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ClassModelElement">
+        <!-- Property: Getter -->
+        <xsd:attribute name="getter" type="AccessModifier" />
+        <!-- Property: Setter -->
+        <xsd:attribute name="setter" type="AccessModifier" />
+        <!-- Property: IsEdited -->
+        <xsd:attribute name="isEdited" type="xsd:boolean" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelFieldBase Moniker -->
+  <xsd:element name="modelFieldBaseMoniker" type="ModelFieldBaseMoniker" substitutionGroup="classModelElementMoniker" />
+  <xsd:complexType name="ModelFieldBaseMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ModelFieldBase instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ClassModelElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelType -->
+  <xsd:element name="modelType" abstract="true" type="ModelType" substitutionGroup="classModelElement" />
+  <xsd:complexType name="ModelType" abstract="true" >
+    <xsd:complexContent>
+      <xsd:extension base="ClassModelElement">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelType Moniker -->
+  <xsd:element name="modelTypeMoniker" abstract="true" type="ModelTypeMoniker" substitutionGroup="classModelElementMoniker" />
+  <xsd:complexType name="ModelTypeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ModelType instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ClassModelElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassModelElement -->
+  <xsd:element name="classModelElement" abstract="true" type="ClassModelElement" substitutionGroup="namedElement" />
+  <xsd:complexType name="ClassModelElement" abstract="true" >
+    <xsd:annotation>
+      <xsd:documentation>Element with a Description</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElement">
+        <!-- Property: Description -->
+        <xsd:attribute name="description" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>This is a Description.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassModelElement Moniker -->
+  <xsd:element name="classModelElementMoniker" abstract="true" type="ClassModelElementMoniker" substitutionGroup="namedElementMoniker" />
+  <xsd:complexType name="ClassModelElementMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ClassModelElement instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="NamedElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- NavigationProperty -->
+  <xsd:element name="navigationProperty" type="NavigationProperty" substitutionGroup="modelFieldBase" />
+  <xsd:complexType name="NavigationProperty">
+    <xsd:complexContent>
+      <xsd:extension base="ModelFieldBase">
+        <!-- Property: Multiplicity -->
+        <xsd:attribute name="multiplicity" type="Multiplicity" />
+        <!-- Property: Association -->
+        <xsd:attribute name="association" type="xsd:string" />
+        <!-- Property: Type -->
+        <xsd:attribute name="type" type="xsd:string" />
+        <!-- Property: IsForeignkey -->
+        <xsd:attribute name="isForeignkey" type="xsd:boolean" />
+        <!-- Property: ForeignkeyColumn -->
+        <xsd:attribute name="foreignkeyColumn" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- NavigationProperty Moniker -->
+  <xsd:element name="navigationPropertyMoniker" type="NavigationPropertyMoniker" substitutionGroup="modelFieldBaseMoniker" />
+  <xsd:complexType name="NavigationPropertyMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for NavigationProperty instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ModelFieldBaseMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelField -->
+  <xsd:element name="modelField" type="ModelField" substitutionGroup="modelFieldBase" />
+  <xsd:complexType name="ModelField">
+    <xsd:complexContent>
+      <xsd:extension base="ModelFieldBase">
+        <!-- Property: IsPrimaryKey -->
+        <xsd:attribute name="isPrimaryKey" type="xsd:boolean" />
+        <!-- Property: DatabaseColumnName -->
+        <xsd:attribute name="databaseColumnName" type="xsd:string" />
+        <!-- Property: DefaultValue -->
+        <xsd:attribute name="defaultValue" type="xsd:string" />
+        <!-- Property: Nullable -->
+        <xsd:attribute name="nullable" type="xsd:boolean" />
+        <!-- Property: Type -->
+        <xsd:attribute name="type" type="BuiltInTypes" />
+        <!-- Property: IsDbGenerated -->
+        <xsd:attribute name="isDbGenerated" type="xsd:boolean" />
+        <!-- Property: IsFixedLength -->
+        <xsd:attribute name="isFixedLength" type="xsd:boolean" />
+        <!-- Property: IsUnicode -->
+        <xsd:attribute name="isUnicode" type="xsd:boolean" />
+        <!-- Property: MaxLength -->
+        <xsd:attribute name="maxLength" type="xsd:integer" />
+        <!-- Property: IsIdentity -->
+        <xsd:attribute name="isIdentity" type="xsd:boolean" />
+        <!-- Property: IsUnique -->
+        <xsd:attribute name="isUnique" type="xsd:boolean" />
+        <!-- Property: UpdateCheck -->
+        <xsd:attribute name="updateCheck" type="ConcurrencyCheckFrequency" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelField Moniker -->
+  <xsd:element name="modelFieldMoniker" type="ModelFieldMoniker" substitutionGroup="modelFieldBaseMoniker" />
+  <xsd:complexType name="ModelFieldMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ModelField instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ModelFieldBaseMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Association -->
+  <xsd:element name="association" type="Association" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Association">
+    <xsd:annotation>
+      <xsd:documentation>Associations between Classes.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end ModelClass -->
+          <xsd:element ref="modelClassMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: End1Multiplicity -->
+        <xsd:attribute name="end1Multiplicity" type="Multiplicity" />
+        <!-- Property: End1RoleName -->
+        <xsd:attribute name="end1RoleName" type="xsd:string" />
+        <!-- Property: End2Multiplicity -->
+        <xsd:attribute name="end2Multiplicity" type="Multiplicity" />
+        <!-- Property: End2RoleName -->
+        <xsd:attribute name="end2RoleName" type="xsd:string" />
+        <!-- Property: End1NavigationProperty -->
+        <xsd:attribute name="end1NavigationProperty" type="xsd:string" />
+        <!-- Property: End2NavigationProperty -->
+        <xsd:attribute name="end2NavigationProperty" type="xsd:string" />
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" />
+        <!-- Property: ManyToManyMappingTable -->
+        <xsd:attribute name="manyToManyMappingTable" type="xsd:string" />
+        <!-- Property: End1ManyToManyMappingColumn -->
+        <xsd:attribute name="end1ManyToManyMappingColumn" type="xsd:string" />
+        <!-- Property: End2ManyToManyMappingColumn -->
+        <xsd:attribute name="end2ManyToManyMappingColumn" type="xsd:string" />
+        <!-- Property: IsEdited -->
+        <xsd:attribute name="isEdited" type="xsd:boolean" />
+        <!-- Property: End1ManyToManyNavigationProperty -->
+        <xsd:attribute name="end1ManyToManyNavigationProperty" type="xsd:string" />
+        <!-- Property: End2ManyToManyNavigationProperty -->
+        <xsd:attribute name="end2ManyToManyNavigationProperty" type="xsd:string" />
+        <!-- Property: End1ManyToManyFieldName -->
+        <xsd:attribute name="end1ManyToManyFieldName" type="xsd:string" />
+        <!-- Property: End2ManyToManyFieldName -->
+        <xsd:attribute name="end2ManyToManyFieldName" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Association Moniker -->
+  <xsd:element name="associationMoniker" type="AssociationMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="AssociationMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Association instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Inheritance -->
+  <xsd:element name="inheritance" type="Inheritance" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="Inheritance">
+    <xsd:annotation>
+      <xsd:documentation>Inheritance between Classes.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end ModelClass -->
+          <xsd:element ref="modelClassMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Property: Discriminator -->
+        <xsd:attribute name="discriminator" type="xsd:string" />
+        <!-- Property: DerivedClassPrimaryKeyColumn -->
+        <xsd:attribute name="derivedClassPrimaryKeyColumn" type="xsd:string" />
+        <!-- Property: BaseClassPrimaryKeyColumn -->
+        <xsd:attribute name="baseClassPrimaryKeyColumn" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Inheritance Moniker -->
+  <xsd:element name="inheritanceMoniker" abstract="true" type="InheritanceMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="InheritanceMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for Inheritance instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelRootHasTypes -->
+  <xsd:element name="modelRootHasTypes" abstract="true" type="ModelRootHasTypes" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ModelRootHasTypes" abstract="true" >
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end ModelType -->
+          <xsd:element ref="modelType" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ModelRootHasTypes Moniker -->
+  <xsd:element name="modelRootHasTypesMoniker" abstract="true" type="ModelRootHasTypesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ModelRootHasTypesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ModelRootHasTypes instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassHasFields -->
+  <xsd:element name="classHasFields" abstract="true" type="ClassHasFields" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ClassHasFields" abstract="true" >
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end ModelField -->
+          <xsd:element ref="modelField" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassHasFields Moniker -->
+  <xsd:element name="classHasFieldsMoniker" abstract="true" type="ClassHasFieldsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ClassHasFieldsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ClassHasFields instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassHasNavigationProperties -->
+  <xsd:element name="classHasNavigationProperties" abstract="true" type="ClassHasNavigationProperties" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ClassHasNavigationProperties" abstract="true" >
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end NavigationProperty -->
+          <xsd:element ref="navigationProperty" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- ClassHasNavigationProperties Moniker -->
+  <xsd:element name="classHasNavigationPropertiesMoniker" abstract="true" type="ClassHasNavigationPropertiesMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ClassHasNavigationPropertiesMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for ClassHasNavigationProperties instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- Enum AccessModifier -->
+  <xsd:simpleType name="AccessModifier">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Public"/>
+      <xsd:enumeration value="Private"/>
+      <xsd:enumeration value="Protected"/>
+      <xsd:enumeration value="Internal"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum TypeAccessModifier -->
+  <xsd:simpleType name="TypeAccessModifier">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Public"/>
+      <xsd:enumeration value="Private"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum InheritanceModifier -->
+  <xsd:simpleType name="InheritanceModifier">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="None"/>
+      <xsd:enumeration value="Abstract"/>
+      <xsd:enumeration value="Sealed"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum Multiplicity -->
+  <xsd:simpleType name="Multiplicity">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ZeroMany"/>
+      <xsd:enumeration value="One"/>
+      <xsd:enumeration value="ZeroOne"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum BuiltInTypes -->
+  <xsd:simpleType name="BuiltInTypes">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Boolean"/>
+      <xsd:enumeration value="Byte"/>
+      <xsd:enumeration value="DateTime"/>
+      <xsd:enumeration value="Decimal"/>
+      <xsd:enumeration value="Double"/>
+      <xsd:enumeration value="Guid"/>
+      <xsd:enumeration value="Int16"/>
+      <xsd:enumeration value="Int64"/>
+      <xsd:enumeration value="Int32"/>
+      <xsd:enumeration value="Single"/>
+      <xsd:enumeration value="String"/>
+      <xsd:enumeration value="Binary"/>
+      <xsd:enumeration value="Timestamp"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum ConcurrencyCheckFrequency -->
+  <xsd:simpleType name="ConcurrencyCheckFrequency">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Always"/>
+      <xsd:enumeration value="WhenChanged"/>
+      <xsd:enumeration value="Never"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+</xsd:schema>
+

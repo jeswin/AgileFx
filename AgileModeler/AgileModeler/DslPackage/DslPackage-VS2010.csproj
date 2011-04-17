@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9F0CBE52-FE7D-46FF-82F1-255C9E5F6420}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ApplicationIcon>Resources\File.ico</ApplicationIcon>
+    <RootNamespace>AgileFx.AgileModeler.DslPackage</RootNamespace>
+    <AssemblyName>AgileFx.AgileModeler.DslPackage</AssemblyName>
+    <AssemblyOriginatorKeyFile>key-vs2010.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <SignAssembly>true</SignAssembly>
+    <StartupObject>
+    </StartupObject>
+    <TargetRegistryRoot>SOFTWARE\Microsoft\VisualStudio\10.0Exp</TargetRegistryRoot>
+    <RegisterOutputPackage>true</RegisterOutputPackage>
+    <UseCodebase>true</UseCodebase>
+    <GacTargetOutput>false</GacTargetOutput>
+    <DelaySign>false</DelaySign>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;VS_2010</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;VS_2010</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\VSSDK\Microsoft.VsSDK.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\DSLTools\v10.0\Microsoft.DSLTools.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.Data.ConnectionUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Data.ConnectionUI.Dialog, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\Microsoft.Data.ConnectionUI.Dialog.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Modeling.Sdk$(DslToolsVersionSuffix), Version=$(DslToolsAsmVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Modeling.Sdk.Diagrams$(DslToolsVersionSuffix), Version=$(DslToolsAsmVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Modeling.Sdk.Diagrams.GraphObject$(DslToolsVersionSuffix), Version=$(DslToolsAsmVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="Microsoft.VisualStudio.Modeling.Sdk.Shell$(DslToolsVersionSuffix), Version=$(DslToolsAsmVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell$(MpfVersionSuffix), Version=$(MpfAsmVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 2010 SDK\VisualStudioIntegration\Common\Assemblies\v4.0\Microsoft.VisualStudio.TextTemplating.10.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.Interfaces.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 2010 SDK\VisualStudioIntegration\Common\Assemblies\v4.0\Microsoft.VisualStudio.TextTemplating.Interfaces.10.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextTemplating.VSHost$(T4VersionSuffix), Version=$(T4AsmVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomCode\CodeGeneration\CodeGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomCode\CommandSetState.cs" />
+    <Compile Include="CustomCode\AgileModelerCommandSet.cs" />
+    <Compile Include="CustomCode\CodeGeneration\CodeGenerationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CodeGenerationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\CustomCommand.cs" />
+    <Compile Include="CustomCode\AgileModelerDocData.cs" />
+    <Compile Include="CustomCode\DomainUtils\InheritanceUtil.cs" />
+    <Compile Include="CustomCode\Forms\GetOrCreateConnectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCode\Forms\GetOrCreateConnectionForm.Designer.cs">
+      <DependentUpon>GetOrCreateConnectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\Forms\ItemDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCode\Forms\ItemDetailsForm.Designer.cs">
+      <DependentUpon>ItemDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\Forms\SetBaseClassAndInterfacesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCode\Forms\SetBaseClassAndInterfacesForm.Designer.cs">
+      <DependentUpon>SetBaseClassAndInterfacesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\Forms\GenerateSQLForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCode\Forms\GenerateSQLForm.Designer.cs">
+      <DependentUpon>GenerateSQLForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\ImportExport\GenerateSQL\DbSchemaGenerator.cs" />
+    <Compile Include="CustomCode\MenuCommands\ExportDiagramCommand.cs" />
+    <Compile Include="CustomCode\MenuCommands\GenerateDbSchemaCommand.cs" />
+    <Compile Include="CustomCode\MenuCommands\LayoutDiagramCommand.cs" />
+    <Compile Include="CustomCode\MenuCommands\SetBaseClassNInterfacesCommand.cs" />
+    <Compile Include="CustomCode\ModelerTransaction.cs" />
+    <Compile Include="CustomCode\ModelExplorer\AgileModelerExplorer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomCode\FieldTypesProvider.cs" />
+    <Compile Include="CustomCode\Forms\AddAssociationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCode\Forms\AddAssociationForm.Designer.cs">
+      <DependentUpon>AddAssociationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\Forms\AddEntityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCode\Forms\AddEntityForm.Designer.cs">
+      <DependentUpon>AddEntityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\Forms\AddInheritanceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCode\Forms\AddInheritanceForm.Designer.cs">
+      <DependentUpon>AddInheritanceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\Forms\ConnectionWizardDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCode\Forms\ConnectionWizardDialog.Designer.cs">
+      <DependentUpon>ConnectionWizardDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\Forms\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCode\Forms\FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\Forms\TableSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomCode\Forms\TableSelectionForm.Designer.cs">
+      <DependentUpon>TableSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomCode\ImportExport\ImportModels\Association.cs" />
+    <Compile Include="CustomCode\ImportExport\ImportModels\MSSQLSchemaDiscover.cs" />
+    <Compile Include="CustomCode\ImportExport\ImportModels\DbSchemaImporter.cs" />
+    <Compile Include="CustomCode\MenuCommands\AddEntityCommand.cs" />
+    <Compile Include="CustomCode\MenuCommands\AddAssociationCommand.cs" />
+    <Compile Include="CustomCode\MenuCommands\BrowseRepositoryCommand.cs" />
+    <Compile Include="CustomCode\MenuCommands\AddInheritanceCommand.cs" />
+    <Compile Include="CustomCode\MenuCommands\DSLMenuCommand.cs" />
+    <Compile Include="CustomCode\MenuCommands\UpdateDbSchemaCommand.cs" />
+    <Compile Include="CustomCode\MenuCommands\ZoomCommands.cs" />
+    <Compile Include="CustomCode\ModelExplorer\AgileModelerExplorerElementVisitor.cs" />
+    <Compile Include="CustomCode\ModelExplorer\AgileModelerExplorerToolWindow.cs" />
+    <Compile Include="AgileModelerPackage.cs" />
+    <Compile Include="GeneratedCode\CommandSet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommandSet.tt</DependentUpon>
+    </Compile>
+    <None Include="GeneratedCode\Constants.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Constants.cs</LastGenOutput>
+    </None>
+    <Compile Include="GeneratedCode\Constants.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Constants.tt</DependentUpon>
+    </Compile>
+    <None Include="GeneratedCode\DocData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DocData.cs</LastGenOutput>
+    </None>
+    <Compile Include="GeneratedCode\DocData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocData.tt</DependentUpon>
+    </Compile>
+    <None Include="GeneratedCode\DocView.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DocView.cs</LastGenOutput>
+    </None>
+    <Compile Include="GeneratedCode\DocView.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocView.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratedCode\EditorFactory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditorFactory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GeneratedCode\ModelExplorer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelExplorer.tt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GeneratedCode\ModelExplorerToolWindow.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelExplorerToolWindow.tt</DependentUpon>
+    </Compile>
+    <None Include="GeneratedCode\ModelExplorer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelExplorer.cs</LastGenOutput>
+    </None>
+    <Compile Include="GeneratedCode\Package-VS2010.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Package-VS2010.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\Pluralizer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchemaDiscovery\CommonHelpers\NamingHelper.cs" />
+    <Compile Include="SchemaDiscovery\Configuration\DbSchemaProviderConfigurationView.cs" />
+    <Compile Include="SchemaDiscovery\Configuration\DbSchemaProviderMapping.cs" />
+    <Compile Include="SchemaDiscovery\Configuration\DbSchemaProviderSettings.cs" />
+    <Compile Include="SchemaDiscovery\DbSchemaDiscoverer.cs" />
+    <Compile Include="SchemaDiscovery\DbSchemaProvider.cs" />
+    <Compile Include="SchemaDiscovery\DbSchemaProviderFactory.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\Base\Column.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\Base\DatabaseType.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\Base\DbDataType.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\Base\Parameter.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\Base\StoredProcedure.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\Base\Table.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\Base\View.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\SqlServer\SqlServerColumn.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\SqlServer\SqlServerDbDataType.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\SqlServer\SqlServerParameter.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\SqlServer\SqlServerStoredProcedure.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\SqlServer\SqlServerTable.cs" />
+    <Compile Include="SchemaDiscovery\ObjectModel\SqlServer\SqlServerView.cs" />
+    <Compile Include="SchemaDiscovery\Plugins\OracleSchemaProvider.cs" />
+    <Compile Include="SchemaDiscovery\Plugins\SqlServerSchemaProvider.cs" />
+    <Compile Include="SchemaDiscovery\Properties.cs" />
+    <Compile Include="SchemaDiscovery\Translators\SqlServer\Data\SqlServerDataTypeConverter.cs" />
+    <Compile Include="SchemaDiscovery\Translators\SqlServer\Helpers\SqlServerTranslatorHelper.cs" />
+    <Compile Include="SchemaDiscovery\Translators\SqlServer\SqlServerStoredProcedureTranslator.cs" />
+    <Compile Include="SchemaDiscovery\Translators\SqlServer\SqlServerTableTranslator.cs" />
+    <Compile Include="SchemaDiscovery\Translators\SqlServer\SqlServerViewTranslator.cs" />
+    <Compile Include="Utils\ConnectionUtil.cs" />
+    <Compile Include="Utils\ModelUtil.cs" />
+    <Compile Include="Utils\TypeUtil.cs" />
+    <None Include="GeneratedCode\EditorFactory.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EditorFactory.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\ModelExplorerToolWindow.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelExplorerToolWindow.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\Package-VS2010.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Package-VS2010.cs</LastGenOutput>
+    </None>
+    <None Include="key-vs2010.snk" />
+    <None Include="source.extension.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>source.extension.vsixmanifest</LastGenOutput>
+    </None>
+    <None Include="source.extension.vsixmanifest">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>source.extension.tt</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomCode\CodeGeneration\CodeGenerationResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CodeGenerationResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCode\Forms\AddAssociationForm.resx">
+      <DependentUpon>AddAssociationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCode\Forms\AddEntityForm.resx">
+      <DependentUpon>AddEntityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCode\Forms\AddInheritanceForm.resx">
+      <DependentUpon>AddInheritanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCode\Forms\ConnectionWizardDialog.resx">
+      <DependentUpon>ConnectionWizardDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCode\Forms\SetBaseClassAndInterfacesForm.resx">
+      <DependentUpon>SetBaseClassAndInterfacesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCode\Forms\GenerateSQLForm.resx">
+      <DependentUpon>GenerateSQLForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCode\Forms\TableSelectionForm.resx">
+      <DependentUpon>TableSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VSPackage.resx">
+      <SubType>Designer</SubType>
+      <MergeWithCTO>true</MergeWithCTO>
+      <ManifestResourceName>VSPackage</ManifestResourceName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CustomCode\CodeGeneration\CodegenTemplate.tt">
+      <LastGenOutput>ClassTemplate.txt</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCode\Forms\GetOrCreateConnectionForm.resx">
+      <DependentUpon>GetOrCreateConnectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomCode\Forms\ItemDetailsForm.resx">
+      <DependentUpon>ItemDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="CustomCode\RegisterCustomTools.reg" />
+    <None Include="GeneratedCode\CommandSet.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CommandSet.cs</LastGenOutput>
+    </None>
+    <None Include="GeneratedCode\GeneratedVSCT.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GeneratedVSCT.vsct</LastGenOutput>
+    </None>
+    <Content Include="GeneratedCode\GeneratedVSCT.vsct">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeneratedVSCT.tt</DependentUpon>
+    </Content>
+    <VSCTCompile Include="Commands.vsct">
+      <ResourceName>1000.ctmenu</ResourceName>
+    </VSCTCompile>
+  </ItemGroup>
+  <PropertyGroup>
+    <StartProgram>$(DevEnvDir)\devenv.exe</StartProgram>
+    <StartAction>Program</StartAction>
+    <StartArguments>/ranu /rootsuffix Exp  "..\..\..\Debugging\Debugging.sln"</StartArguments>
+  </PropertyGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CodeAnalysisDictionary.xml">
+      <Link>CodeAnalysisDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+    <Content Include="Lib\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Lib\Microsoft.Practices.ObjectBuilder.dll" />
+    <Content Include="Resources\ModelExplorerToolWindowBitmaps.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dsl\Dsl-VS2010.csproj">
+      <Project>{8F3869C5-3CCF-4AB1-8F98-C5F2EF7361B3}</Project>
+      <Name>Dsl-VS2010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <!-- ******************************* -->
+  <!-- T4 MsBuild utilities -->
+  <PropertyGroup>
+    <!-- Whether T4 templates should be transformed as part of the build -->
+    <TransformOnBuild>false</TransformOnBuild>
+    <!-- Specifies how read-only files should be dealt with. False -> build error, true -> warning -->
+    <OverwriteReadOnlyOutputFiles>false</OverwriteReadOnlyOutputFiles>
+  </PropertyGroup>
+  <!-- End of T4 MsBuild settings -->
+  <!-- *******************************   -->
+</Project>

@@ -1,0 +1,5 @@
+D:\projects\AgileFx\AgileModeler\AgileModeler\Lib\bin\Debug\AgileFx.AgileModeler.Lib.dll
+D:\projects\AgileFx\AgileModeler\AgileModeler\Lib\bin\Debug\AgileFx.AgileModeler.Lib.pdb
+D:\projects\AgileFx\AgileModeler\AgileModeler\Lib\obj\Debug\ResolveAssemblyReference.cache
+D:\projects\AgileFx\AgileModeler\AgileModeler\Lib\obj\Debug\AgileFx.AgileModeler.Lib.dll
+D:\projects\AgileFx\AgileModeler\AgileModeler\Lib\obj\Debug\AgileFx.AgileModeler.Lib.pdb

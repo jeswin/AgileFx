@@ -1,0 +1,47 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link href="/Styles/site.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="/scripts/jquery.js"></script>
+
+    <script type="text/javascript" src="/scripts/taskometer.js"></script>
+
+    <asp:ContentPlaceHolder ID="HeaderContent" runat="server" />
+</head>
+<body class="tenants hasFooter loggedInView">
+    <div id="frame">
+        <div class="header">
+            <div class="logo">
+                <img src="/images/_samples/default-logo-small.png" alt="sample(ethical studios)" /></div>
+            <asp:ContentPlaceHolder ID="MenuContent" runat="server" />
+            <div class="loginAndSettings">
+                <ul id="settingsLink" class="topnav">
+                    <li><a href="">My Account</a>
+                        <ul class="subnav">
+                            <li><a href="">Profile</a></li>
+                            <li><a href="">Password</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <span id="loginLink"><a href="">logout</a><br />firstname</span>
+            </div>
+        </div>
+        <div class="pageContent">
+            <asp:ContentPlaceHolder ID="PageContent" runat="server" />
+            <div class="clearFooter">
+            </div>
+        </div>
+        <div class="footer">
+            <p class="content">
+                AgileHead is a company that gets products out of the door quickly.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+D:\projects\AgileFx\AgileModeler\AgileModeler\Dsl\bin\Debug\GeneratedCode\AgileModelerSchema.xsd
+D:\projects\AgileFx\AgileModeler\AgileModeler\Dsl\bin\Debug\AgileFx.AgileModeler.Dsl.dll
+D:\projects\AgileFx\AgileModeler\AgileModeler\Dsl\bin\Debug\AgileFx.AgileModeler.Dsl.pdb
+D:\projects\AgileFx\AgileModeler\AgileModeler\Dsl\obj\Debug\ResolveAssemblyReference.cache
+D:\projects\AgileFx\AgileModeler\AgileModeler\Dsl\obj\Debug\AgileFx.AgileModeler.GeneratedCode.DomainModelResx.resources
+D:\projects\AgileFx\AgileModeler\AgileModeler\Dsl\obj\Debug\GenerateResource.read.1.tlog
+D:\projects\AgileFx\AgileModeler\AgileModeler\Dsl\obj\Debug\GenerateResource.write.1.tlog
+D:\projects\AgileFx\AgileModeler\AgileModeler\Dsl\obj\Debug\AgileFx.AgileModeler.Dsl.dll
+D:\projects\AgileFx\AgileModeler\AgileModeler\Dsl\obj\Debug\AgileFx.AgileModeler.Dsl.pdb

@@ -1,0 +1,12 @@
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\AgileFx.AgileModeler.DslPackage.dll
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\AgileFx.AgileModeler.Dsl.dll
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\Microsoft.Data.ConnectionUI.Dialog.dll
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\Microsoft.Data.ConnectionUI.dll
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\Microsoft.Practices.ObjectBuilder.dll
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\AgileFx.AgileModeler.DslPackage.pkgdef
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\extension.vsixmanifest
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\AgileFx.AgileModeler.DslPackage.pdb
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\GeneratedCode\AgileModelerSchema.xsd
+C:\Users\jeswin\AppData\Local\Microsoft\VisualStudio\10.0Exp\Extensions\AgileHead\AgileModeler\1.0.0.0\\AgileFx.AgileModeler.Dsl.pdb

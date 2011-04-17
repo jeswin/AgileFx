@@ -1,0 +1,1235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AgileFx.AgileModeler.AgileModelerDomainModel.Description" xml:space="preserve">
+    <value>Create Models for the AgileFx ORM Framework</value>
+    <comment>Description for DslLibrary &apos;AgileModeler&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.AgileModelerDomainModel.DisplayName" xml:space="preserve">
+    <value>AgileModeler</value>
+    <comment>DisplayName for DslLibrary &apos;AgileModeler&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NamedElement.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NamedElement.DisplayName" xml:space="preserve">
+    <value>Named Element</value>
+    <comment>DisplayName for DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NamedElement/Name.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NamedElement/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;NamedElement&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRoot.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainClass &apos;ModelRoot&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRoot.DisplayName" xml:space="preserve">
+    <value>Model Root</value>
+    <comment>DisplayName for DomainClass &apos;ModelRoot&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRoot/Namespace.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelRoot.Namespace</value>
+    <comment>Description for DomainProperty &apos;Namespace&apos; on DomainClass &apos;ModelRoot&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRoot/Namespace.DisplayName" xml:space="preserve">
+    <value>Namespace</value>
+    <comment>DisplayName for DomainProperty &apos;Namespace&apos; on DomainClass &apos;ModelRoot&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRoot/ConnectionString.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelRoot.Connection String</value>
+    <comment>Description for DomainProperty &apos;ConnectionString&apos; on DomainClass &apos;ModelRoot&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRoot/ConnectionString.DisplayName" xml:space="preserve">
+    <value>Connection String</value>
+    <comment>DisplayName for DomainProperty &apos;ConnectionString&apos; on DomainClass &apos;ModelRoot&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRoot/DataContextName.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelRoot.Data Context Name</value>
+    <comment>Description for DomainProperty &apos;DataContextName&apos; on DomainClass &apos;ModelRoot&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRoot/DataContextName.DisplayName" xml:space="preserve">
+    <value>Data Context Name</value>
+    <comment>DisplayName for DomainProperty &apos;DataContextName&apos; on DomainClass &apos;ModelRoot&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelClass.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainClass &apos;ModelClass&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelClass.DisplayName" xml:space="preserve">
+    <value>Model Class</value>
+    <comment>DisplayName for DomainClass &apos;ModelClass&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelClass/TableName.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelClass.Table Name</value>
+    <comment>Description for DomainProperty &apos;TableName&apos; on DomainClass &apos;ModelClass&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelClass/TableName.DisplayName" xml:space="preserve">
+    <value>Table Name</value>
+    <comment>DisplayName for DomainProperty &apos;TableName&apos; on DomainClass &apos;ModelClass&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelClass/DerivesOrImplements.Description" xml:space="preserve">
+    <value>Comma separated list of base class and implemented interfaces.</value>
+    <comment>Description for DomainProperty &apos;DerivesOrImplements&apos; on DomainClass &apos;ModelClass&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelClass/DerivesOrImplements.DisplayName" xml:space="preserve">
+    <value>Derives Or Implements</value>
+    <comment>DisplayName for DomainProperty &apos;DerivesOrImplements&apos; on DomainClass &apos;ModelClass&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelFieldBase.Description" xml:space="preserve">
+    <value>A field of a class.</value>
+    <comment>Description for DomainClass &apos;ModelFieldBase&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelFieldBase.DisplayName" xml:space="preserve">
+    <value>Model Field Base</value>
+    <comment>DisplayName for DomainClass &apos;ModelFieldBase&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelFieldBase/Getter.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelFieldBase.Getter</value>
+    <comment>Description for DomainProperty &apos;Getter&apos; on DomainClass &apos;ModelFieldBase&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelFieldBase/Getter.DisplayName" xml:space="preserve">
+    <value>Getter</value>
+    <comment>DisplayName for DomainProperty &apos;Getter&apos; on DomainClass &apos;ModelFieldBase&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelFieldBase/Setter.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelFieldBase.Setter</value>
+    <comment>Description for DomainProperty &apos;Setter&apos; on DomainClass &apos;ModelFieldBase&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelFieldBase/Setter.DisplayName" xml:space="preserve">
+    <value>Setter</value>
+    <comment>DisplayName for DomainProperty &apos;Setter&apos; on DomainClass &apos;ModelFieldBase&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelFieldBase/IsEdited.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelFieldBase.Is Edited</value>
+    <comment>Description for DomainProperty &apos;IsEdited&apos; on DomainClass &apos;ModelFieldBase&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelFieldBase/IsEdited.DisplayName" xml:space="preserve">
+    <value>Is Edited</value>
+    <comment>DisplayName for DomainProperty &apos;IsEdited&apos; on DomainClass &apos;ModelFieldBase&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelType.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainClass &apos;ModelType&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelType.DisplayName" xml:space="preserve">
+    <value>Model Type</value>
+    <comment>DisplayName for DomainClass &apos;ModelType&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassModelElement.Description" xml:space="preserve">
+    <value>Element with a Description</value>
+    <comment>Description for DomainClass &apos;ClassModelElement&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassModelElement.DisplayName" xml:space="preserve">
+    <value>Class Model Element</value>
+    <comment>DisplayName for DomainClass &apos;ClassModelElement&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassModelElement/Description.Description" xml:space="preserve">
+    <value>This is a Description.</value>
+    <comment>Description for DomainProperty &apos;Description&apos; on DomainClass &apos;ClassModelElement&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassModelElement/Description.DisplayName" xml:space="preserve">
+    <value>Description</value>
+    <comment>DisplayName for DomainProperty &apos;Description&apos; on DomainClass &apos;ClassModelElement&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.NavigationProperty</value>
+    <comment>Description for DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty.DisplayName" xml:space="preserve">
+    <value>Navigational Property</value>
+    <comment>DisplayName for DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty/Multiplicity.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.NavigationProperty.Multiplicity</value>
+    <comment>Description for DomainProperty &apos;Multiplicity&apos; on DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty/Multiplicity.DisplayName" xml:space="preserve">
+    <value>Multiplicity</value>
+    <comment>DisplayName for DomainProperty &apos;Multiplicity&apos; on DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty/Association.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.NavigationProperty.Association</value>
+    <comment>Description for DomainProperty &apos;Association&apos; on DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty/Association.DisplayName" xml:space="preserve">
+    <value>Association</value>
+    <comment>DisplayName for DomainProperty &apos;Association&apos; on DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty/Type.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.NavigationProperty.Type</value>
+    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty/Type.DisplayName" xml:space="preserve">
+    <value>Type</value>
+    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty/IsForeignkey.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.NavigationProperty.Is Foreignkey</value>
+    <comment>Description for DomainProperty &apos;IsForeignkey&apos; on DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty/IsForeignkey.DisplayName" xml:space="preserve">
+    <value>Is Foreignkey</value>
+    <comment>DisplayName for DomainProperty &apos;IsForeignkey&apos; on DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty/ForeignkeyColumn.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.NavigationProperty.Foreignkey Column</value>
+    <comment>Description for DomainProperty &apos;ForeignkeyColumn&apos; on DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.NavigationProperty/ForeignkeyColumn.DisplayName" xml:space="preserve">
+    <value>Foreignkey Column</value>
+    <comment>DisplayName for DomainProperty &apos;ForeignkeyColumn&apos; on DomainClass &apos;NavigationProperty&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField</value>
+    <comment>Description for DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField.DisplayName" xml:space="preserve">
+    <value>Model Field</value>
+    <comment>DisplayName for DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsPrimaryKey.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Is Primary Key</value>
+    <comment>Description for DomainProperty &apos;IsPrimaryKey&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsPrimaryKey.DisplayName" xml:space="preserve">
+    <value>Is Primary Key</value>
+    <comment>DisplayName for DomainProperty &apos;IsPrimaryKey&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/DatabaseColumnName.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Database Column Name</value>
+    <comment>Description for DomainProperty &apos;DatabaseColumnName&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/DatabaseColumnName.DisplayName" xml:space="preserve">
+    <value>Database Column Name</value>
+    <comment>DisplayName for DomainProperty &apos;DatabaseColumnName&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/DefaultValue.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Default Value</value>
+    <comment>Description for DomainProperty &apos;DefaultValue&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/DefaultValue.DisplayName" xml:space="preserve">
+    <value>Default Value</value>
+    <comment>DisplayName for DomainProperty &apos;DefaultValue&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/Nullable.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Nullable</value>
+    <comment>Description for DomainProperty &apos;Nullable&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/Nullable.DisplayName" xml:space="preserve">
+    <value>Nullable</value>
+    <comment>DisplayName for DomainProperty &apos;Nullable&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/Type.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Type</value>
+    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/Type.DisplayName" xml:space="preserve">
+    <value>Type</value>
+    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsDbGenerated.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Is Db Generated</value>
+    <comment>Description for DomainProperty &apos;IsDbGenerated&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsDbGenerated.DisplayName" xml:space="preserve">
+    <value>Is Db Generated</value>
+    <comment>DisplayName for DomainProperty &apos;IsDbGenerated&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsFixedLength.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Is Fixed Length</value>
+    <comment>Description for DomainProperty &apos;IsFixedLength&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsFixedLength.DisplayName" xml:space="preserve">
+    <value>Is Fixed Length</value>
+    <comment>DisplayName for DomainProperty &apos;IsFixedLength&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsUnicode.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Is Unicode</value>
+    <comment>Description for DomainProperty &apos;IsUnicode&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsUnicode.DisplayName" xml:space="preserve">
+    <value>Is Unicode</value>
+    <comment>DisplayName for DomainProperty &apos;IsUnicode&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/MaxLength.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Max Length</value>
+    <comment>Description for DomainProperty &apos;MaxLength&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/MaxLength.DisplayName" xml:space="preserve">
+    <value>Max Length</value>
+    <comment>DisplayName for DomainProperty &apos;MaxLength&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsIdentity.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Is Identity</value>
+    <comment>Description for DomainProperty &apos;IsIdentity&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsIdentity.DisplayName" xml:space="preserve">
+    <value>Is Identity</value>
+    <comment>DisplayName for DomainProperty &apos;IsIdentity&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsUnique.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Is Unique</value>
+    <comment>Description for DomainProperty &apos;IsUnique&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/IsUnique.DisplayName" xml:space="preserve">
+    <value>Is Unique</value>
+    <comment>DisplayName for DomainProperty &apos;IsUnique&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/UpdateCheck.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ModelField.Update Check</value>
+    <comment>Description for DomainProperty &apos;UpdateCheck&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelField/UpdateCheck.DisplayName" xml:space="preserve">
+    <value>Update Check</value>
+    <comment>DisplayName for DomainProperty &apos;UpdateCheck&apos; on DomainClass &apos;ModelField&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association.Description" xml:space="preserve">
+    <value>Associations between Classes.</value>
+    <comment>Description for DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association.DisplayName" xml:space="preserve">
+    <value>Association</value>
+    <comment>DisplayName for DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1Multiplicity.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainProperty &apos;End1Multiplicity&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1Multiplicity.DisplayName" xml:space="preserve">
+    <value>End1 Multiplicity</value>
+    <comment>DisplayName for DomainProperty &apos;End1Multiplicity&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1Multiplicity.Category" xml:space="preserve">
+    <value>End1</value>
+    <comment>Category for DomainProperty &apos;End1Multiplicity&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1RoleName.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainProperty &apos;End1RoleName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1RoleName.DisplayName" xml:space="preserve">
+    <value>End1 Role Name</value>
+    <comment>DisplayName for DomainProperty &apos;End1RoleName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1RoleName.Category" xml:space="preserve">
+    <value>End1</value>
+    <comment>Category for DomainProperty &apos;End1RoleName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2Multiplicity.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainProperty &apos;End2Multiplicity&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2Multiplicity.DisplayName" xml:space="preserve">
+    <value>End2 Multiplicity</value>
+    <comment>DisplayName for DomainProperty &apos;End2Multiplicity&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2Multiplicity.Category" xml:space="preserve">
+    <value>End2</value>
+    <comment>Category for DomainProperty &apos;End2Multiplicity&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2RoleName.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainProperty &apos;End2RoleName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2RoleName.DisplayName" xml:space="preserve">
+    <value>End2 Role Name</value>
+    <comment>DisplayName for DomainProperty &apos;End2RoleName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2RoleName.Category" xml:space="preserve">
+    <value>End2</value>
+    <comment>Category for DomainProperty &apos;End2RoleName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1NavigationProperty.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.End1 Navigation Property</value>
+    <comment>Description for DomainProperty &apos;End1NavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1NavigationProperty.DisplayName" xml:space="preserve">
+    <value>End1 Navigation Property</value>
+    <comment>DisplayName for DomainProperty &apos;End1NavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1NavigationProperty.Category" xml:space="preserve">
+    <value>End1</value>
+    <comment>Category for DomainProperty &apos;End1NavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2NavigationProperty.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.End2 Navigation Property</value>
+    <comment>Description for DomainProperty &apos;End2NavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2NavigationProperty.DisplayName" xml:space="preserve">
+    <value>End2 Navigation Property</value>
+    <comment>DisplayName for DomainProperty &apos;End2NavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2NavigationProperty.Category" xml:space="preserve">
+    <value>End2</value>
+    <comment>Category for DomainProperty &apos;End2NavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/Name.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/ManyToManyMappingTable.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.Many To Many Mapping Table</value>
+    <comment>Description for DomainProperty &apos;ManyToManyMappingTable&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/ManyToManyMappingTable.DisplayName" xml:space="preserve">
+    <value>Many To Many Mapping Table</value>
+    <comment>DisplayName for DomainProperty &apos;ManyToManyMappingTable&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/ManyToManyMappingTable.Category" xml:space="preserve">
+    <value>Many To Many Mapping Table</value>
+    <comment>Category for DomainProperty &apos;ManyToManyMappingTable&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1ManyToManyMappingColumn.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.End1 Many To Many Mapping Column</value>
+    <comment>Description for DomainProperty &apos;End1ManyToManyMappingColumn&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1ManyToManyMappingColumn.DisplayName" xml:space="preserve">
+    <value>End1 Many To Many Mapping Column</value>
+    <comment>DisplayName for DomainProperty &apos;End1ManyToManyMappingColumn&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1ManyToManyMappingColumn.Category" xml:space="preserve">
+    <value>Many To Many Mapping Table</value>
+    <comment>Category for DomainProperty &apos;End1ManyToManyMappingColumn&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2ManyToManyMappingColumn.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.End2 Many To Many Mapping Column</value>
+    <comment>Description for DomainProperty &apos;End2ManyToManyMappingColumn&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2ManyToManyMappingColumn.DisplayName" xml:space="preserve">
+    <value>End2 Many To Many Mapping Column</value>
+    <comment>DisplayName for DomainProperty &apos;End2ManyToManyMappingColumn&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2ManyToManyMappingColumn.Category" xml:space="preserve">
+    <value>Many To Many Mapping Table</value>
+    <comment>Category for DomainProperty &apos;End2ManyToManyMappingColumn&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1MultiplicityDisplay.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.End1 Multiplicity Display</value>
+    <comment>Description for DomainProperty &apos;End1MultiplicityDisplay&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1MultiplicityDisplay.DisplayName" xml:space="preserve">
+    <value>End1 Multiplicity Display</value>
+    <comment>DisplayName for DomainProperty &apos;End1MultiplicityDisplay&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2MultiplicityDisplay.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.End2 Multiplicity Display</value>
+    <comment>Description for DomainProperty &apos;End2MultiplicityDisplay&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2MultiplicityDisplay.DisplayName" xml:space="preserve">
+    <value>End2 Multiplicity Display</value>
+    <comment>DisplayName for DomainProperty &apos;End2MultiplicityDisplay&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/IsEdited.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.Is Edited</value>
+    <comment>Description for DomainProperty &apos;IsEdited&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/IsEdited.DisplayName" xml:space="preserve">
+    <value>Is Edited</value>
+    <comment>DisplayName for DomainProperty &apos;IsEdited&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1ManyToManyNavigationProperty.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.End1 Many To Many Navigation Property</value>
+    <comment>Description for DomainProperty &apos;End1ManyToManyNavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1ManyToManyNavigationProperty.DisplayName" xml:space="preserve">
+    <value>End1 Many To Many Navigation Property</value>
+    <comment>DisplayName for DomainProperty &apos;End1ManyToManyNavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1ManyToManyNavigationProperty.Category" xml:space="preserve">
+    <value>Many To Many Mapping Table</value>
+    <comment>Category for DomainProperty &apos;End1ManyToManyNavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2ManyToManyNavigationProperty.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.End2 Many To Many Navigation Property</value>
+    <comment>Description for DomainProperty &apos;End2ManyToManyNavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2ManyToManyNavigationProperty.DisplayName" xml:space="preserve">
+    <value>End2 Many To Many Navigation Property</value>
+    <comment>DisplayName for DomainProperty &apos;End2ManyToManyNavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2ManyToManyNavigationProperty.Category" xml:space="preserve">
+    <value>Many To Many Mapping Table</value>
+    <comment>Category for DomainProperty &apos;End2ManyToManyNavigationProperty&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1ManyToManyFieldName.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.End1 Many To Many Field Name</value>
+    <comment>Description for DomainProperty &apos;End1ManyToManyFieldName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1ManyToManyFieldName.DisplayName" xml:space="preserve">
+    <value>End1 Many To Many Field Name</value>
+    <comment>DisplayName for DomainProperty &apos;End1ManyToManyFieldName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End1ManyToManyFieldName.Category" xml:space="preserve">
+    <value>Many To Many Mapping Table</value>
+    <comment>Category for DomainProperty &apos;End1ManyToManyFieldName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2ManyToManyFieldName.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Association.End2 Many To Many Field Name</value>
+    <comment>Description for DomainProperty &apos;End2ManyToManyFieldName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2ManyToManyFieldName.DisplayName" xml:space="preserve">
+    <value>End2 Many To Many Field Name</value>
+    <comment>DisplayName for DomainProperty &apos;End2ManyToManyFieldName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/End2ManyToManyFieldName.Category" xml:space="preserve">
+    <value>Many To Many Mapping Table</value>
+    <comment>Category for DomainProperty &apos;End2ManyToManyFieldName&apos; on DomainClass &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/Source.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainRole &apos;Source&apos; on DomainRelationship &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/Source.DisplayName" xml:space="preserve">
+    <value>Source</value>
+    <comment>DisplayName for DomainRole &apos;Source&apos; on DomainRelationship &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/Source.PropertyDisplayName" xml:space="preserve">
+    <value>Targets</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Source&apos; on DomainRelationship &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/Target.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainRole &apos;Target&apos; on DomainRelationship &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/Target.DisplayName" xml:space="preserve">
+    <value>Target</value>
+    <comment>DisplayName for DomainRole &apos;Target&apos; on DomainRelationship &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Association/Target.PropertyDisplayName" xml:space="preserve">
+    <value>Sources</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Target&apos; on DomainRelationship &apos;Association&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance.Description" xml:space="preserve">
+    <value>Inheritance between Classes.</value>
+    <comment>Description for DomainClass &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance.DisplayName" xml:space="preserve">
+    <value>Inheritance</value>
+    <comment>DisplayName for DomainClass &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/Discriminator.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainProperty &apos;Discriminator&apos; on DomainClass &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/Discriminator.DisplayName" xml:space="preserve">
+    <value>Discriminator</value>
+    <comment>DisplayName for DomainProperty &apos;Discriminator&apos; on DomainClass &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/DerivedClassPrimaryKeyColumn.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Inheritance.Derived Class Primary Key Column</value>
+    <comment>Description for DomainProperty &apos;DerivedClassPrimaryKeyColumn&apos; on DomainClass &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/DerivedClassPrimaryKeyColumn.DisplayName" xml:space="preserve">
+    <value>Derived Class Primary Key Column</value>
+    <comment>DisplayName for DomainProperty &apos;DerivedClassPrimaryKeyColumn&apos; on DomainClass &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/BaseClassPrimaryKeyColumn.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.Inheritance.Base Class Primary Key Column</value>
+    <comment>Description for DomainProperty &apos;BaseClassPrimaryKeyColumn&apos; on DomainClass &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/BaseClassPrimaryKeyColumn.DisplayName" xml:space="preserve">
+    <value>Base Class Primary Key Column</value>
+    <comment>DisplayName for DomainProperty &apos;BaseClassPrimaryKeyColumn&apos; on DomainClass &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/Superclass.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainRole &apos;Superclass&apos; on DomainRelationship &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/Superclass.DisplayName" xml:space="preserve">
+    <value>Superclass</value>
+    <comment>DisplayName for DomainRole &apos;Superclass&apos; on DomainRelationship &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/Superclass.PropertyDisplayName" xml:space="preserve">
+    <value>Subclasses</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Superclass&apos; on DomainRelationship &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/Subclass.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainRole &apos;Subclass&apos; on DomainRelationship &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/Subclass.DisplayName" xml:space="preserve">
+    <value>Subclass</value>
+    <comment>DisplayName for DomainRole &apos;Subclass&apos; on DomainRelationship &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Inheritance/Subclass.PropertyDisplayName" xml:space="preserve">
+    <value>Baseclass</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Subclass&apos; on DomainRelationship &apos;Inheritance&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRootHasTypes.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainClass &apos;ModelRootHasTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRootHasTypes.DisplayName" xml:space="preserve">
+    <value>Model Root Has Types</value>
+    <comment>DisplayName for DomainClass &apos;ModelRootHasTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRootHasTypes/ModelRoot.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainRole &apos;ModelRoot&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRootHasTypes/ModelRoot.DisplayName" xml:space="preserve">
+    <value>Model Root</value>
+    <comment>DisplayName for DomainRole &apos;ModelRoot&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRootHasTypes/ModelRoot.PropertyDisplayName" xml:space="preserve">
+    <value>Types</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ModelRoot&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRootHasTypes/Type.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainRole &apos;Type&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ModelRootHasTypes/Type.DisplayName" xml:space="preserve">
+    <value>Type</value>
+    <comment>DisplayName for DomainRole &apos;Type&apos; on DomainRelationship &apos;ModelRootHasTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasFields.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ClassHasFields</value>
+    <comment>Description for DomainClass &apos;ClassHasFields&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasFields.DisplayName" xml:space="preserve">
+    <value>Class Has Fields</value>
+    <comment>DisplayName for DomainClass &apos;ClassHasFields&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasFields/ModelClass.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ClassHasFields.ModelClass</value>
+    <comment>Description for DomainRole &apos;ModelClass&apos; on DomainRelationship &apos;ClassHasFields&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasFields/ModelClass.DisplayName" xml:space="preserve">
+    <value>Model Class</value>
+    <comment>DisplayName for DomainRole &apos;ModelClass&apos; on DomainRelationship &apos;ClassHasFields&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasFields/ModelClass.PropertyDisplayName" xml:space="preserve">
+    <value>Fields</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ModelClass&apos; on DomainRelationship &apos;ClassHasFields&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasFields/ModelField.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ClassHasFields.ModelField</value>
+    <comment>Description for DomainRole &apos;ModelField&apos; on DomainRelationship &apos;ClassHasFields&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasFields/ModelField.DisplayName" xml:space="preserve">
+    <value>Model Field</value>
+    <comment>DisplayName for DomainRole &apos;ModelField&apos; on DomainRelationship &apos;ClassHasFields&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasFields/ModelField.PropertyDisplayName" xml:space="preserve">
+    <value>Model Class</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ModelField&apos; on DomainRelationship &apos;ClassHasFields&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasNavigationProperties.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ClassHasNavigationProperties</value>
+    <comment>Description for DomainClass &apos;ClassHasNavigationProperties&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasNavigationProperties.DisplayName" xml:space="preserve">
+    <value>Class Has Navigational Properties</value>
+    <comment>DisplayName for DomainClass &apos;ClassHasNavigationProperties&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasNavigationProperties/ModelClass.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ClassHasNavigationProperties.ModelClass</value>
+    <comment>Description for DomainRole &apos;ModelClass&apos; on DomainRelationship &apos;ClassHasNavigationProperties&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasNavigationProperties/ModelClass.DisplayName" xml:space="preserve">
+    <value>Model Class</value>
+    <comment>DisplayName for DomainRole &apos;ModelClass&apos; on DomainRelationship &apos;ClassHasNavigationProperties&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasNavigationProperties/ModelClass.PropertyDisplayName" xml:space="preserve">
+    <value>Navigational Properties</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ModelClass&apos; on DomainRelationship &apos;ClassHasNavigationProperties&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasNavigationProperties/NavigationProperty.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ClassHasNavigationProperties.NavigationProperty</value>
+    <comment>Description for DomainRole &apos;NavigationProperty&apos; on DomainRelationship &apos;ClassHasNavigationProperties&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasNavigationProperties/NavigationProperty.DisplayName" xml:space="preserve">
+    <value>Navigational Property</value>
+    <comment>DisplayName for DomainRole &apos;NavigationProperty&apos; on DomainRelationship &apos;ClassHasNavigationProperties&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassHasNavigationProperties/NavigationProperty.PropertyDisplayName" xml:space="preserve">
+    <value>Model Class</value>
+    <comment>PropertyDisplayName for DomainRole &apos;NavigationProperty&apos; on DomainRelationship &apos;ClassHasNavigationProperties&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.AccessModifier/Public.DisplayName" xml:space="preserve">
+    <value>Public</value>
+    <comment>Display name for EnumerationLiteral &apos;Public&apos; on DomainEnumeration &apos;AccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.AccessModifier/Public.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for EnumerationLiteral &apos;Public&apos; on DomainEnumeration &apos;AccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.AccessModifier/Private.DisplayName" xml:space="preserve">
+    <value>Private</value>
+    <comment>Display name for EnumerationLiteral &apos;Private&apos; on DomainEnumeration &apos;AccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.AccessModifier/Private.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for EnumerationLiteral &apos;Private&apos; on DomainEnumeration &apos;AccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.AccessModifier/Protected.DisplayName" xml:space="preserve">
+    <value>Protected</value>
+    <comment>Display name for EnumerationLiteral &apos;Protected&apos; on DomainEnumeration &apos;AccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.AccessModifier/Protected.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.AccessModifier.Protected</value>
+    <comment>Description for EnumerationLiteral &apos;Protected&apos; on DomainEnumeration &apos;AccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.AccessModifier/Internal.DisplayName" xml:space="preserve">
+    <value>Internal</value>
+    <comment>Display name for EnumerationLiteral &apos;Internal&apos; on DomainEnumeration &apos;AccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.AccessModifier/Internal.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.AccessModifier.Internal</value>
+    <comment>Description for EnumerationLiteral &apos;Internal&apos; on DomainEnumeration &apos;AccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.TypeAccessModifier/Public.DisplayName" xml:space="preserve">
+    <value>Public</value>
+    <comment>Display name for EnumerationLiteral &apos;Public&apos; on DomainEnumeration &apos;TypeAccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.TypeAccessModifier/Public.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for EnumerationLiteral &apos;Public&apos; on DomainEnumeration &apos;TypeAccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.TypeAccessModifier/Private.DisplayName" xml:space="preserve">
+    <value>Private</value>
+    <comment>Display name for EnumerationLiteral &apos;Private&apos; on DomainEnumeration &apos;TypeAccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.TypeAccessModifier/Private.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for EnumerationLiteral &apos;Private&apos; on DomainEnumeration &apos;TypeAccessModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.InheritanceModifier/None.DisplayName" xml:space="preserve">
+    <value>None</value>
+    <comment>Display name for EnumerationLiteral &apos;None&apos; on DomainEnumeration &apos;InheritanceModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.InheritanceModifier/None.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for EnumerationLiteral &apos;None&apos; on DomainEnumeration &apos;InheritanceModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.InheritanceModifier/Abstract.DisplayName" xml:space="preserve">
+    <value>Abstract</value>
+    <comment>Display name for EnumerationLiteral &apos;Abstract&apos; on DomainEnumeration &apos;InheritanceModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.InheritanceModifier/Abstract.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for EnumerationLiteral &apos;Abstract&apos; on DomainEnumeration &apos;InheritanceModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.InheritanceModifier/Sealed.DisplayName" xml:space="preserve">
+    <value>Sealed</value>
+    <comment>Display name for EnumerationLiteral &apos;Sealed&apos; on DomainEnumeration &apos;InheritanceModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.InheritanceModifier/Sealed.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for EnumerationLiteral &apos;Sealed&apos; on DomainEnumeration &apos;InheritanceModifier&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Multiplicity/ZeroMany.DisplayName" xml:space="preserve">
+    <value>ZeroMany</value>
+    <comment>Display name for EnumerationLiteral &apos;ZeroMany&apos; on DomainEnumeration &apos;Multiplicity&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Multiplicity/ZeroMany.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for EnumerationLiteral &apos;ZeroMany&apos; on DomainEnumeration &apos;Multiplicity&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Multiplicity/One.DisplayName" xml:space="preserve">
+    <value>One</value>
+    <comment>Display name for EnumerationLiteral &apos;One&apos; on DomainEnumeration &apos;Multiplicity&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Multiplicity/One.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for EnumerationLiteral &apos;One&apos; on DomainEnumeration &apos;Multiplicity&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Multiplicity/ZeroOne.DisplayName" xml:space="preserve">
+    <value>ZeroOne</value>
+    <comment>Display name for EnumerationLiteral &apos;ZeroOne&apos; on DomainEnumeration &apos;Multiplicity&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.Multiplicity/ZeroOne.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for EnumerationLiteral &apos;ZeroOne&apos; on DomainEnumeration &apos;Multiplicity&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Boolean.DisplayName" xml:space="preserve">
+    <value>Boolean</value>
+    <comment>Display name for EnumerationLiteral &apos;Boolean&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Boolean.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.Boolean</value>
+    <comment>Description for EnumerationLiteral &apos;Boolean&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Byte.DisplayName" xml:space="preserve">
+    <value>Byte</value>
+    <comment>Display name for EnumerationLiteral &apos;Byte&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Byte.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.Byte</value>
+    <comment>Description for EnumerationLiteral &apos;Byte&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/DateTime.DisplayName" xml:space="preserve">
+    <value>DateTime</value>
+    <comment>Display name for EnumerationLiteral &apos;DateTime&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/DateTime.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.DateTime</value>
+    <comment>Description for EnumerationLiteral &apos;DateTime&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Decimal.DisplayName" xml:space="preserve">
+    <value>Decimal</value>
+    <comment>Display name for EnumerationLiteral &apos;Decimal&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Decimal.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.Decimal</value>
+    <comment>Description for EnumerationLiteral &apos;Decimal&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Double.DisplayName" xml:space="preserve">
+    <value>Double</value>
+    <comment>Display name for EnumerationLiteral &apos;Double&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Double.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.Double</value>
+    <comment>Description for EnumerationLiteral &apos;Double&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Guid.DisplayName" xml:space="preserve">
+    <value>Guid</value>
+    <comment>Display name for EnumerationLiteral &apos;Guid&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Guid.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.Guid</value>
+    <comment>Description for EnumerationLiteral &apos;Guid&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Int16.DisplayName" xml:space="preserve">
+    <value>Int16</value>
+    <comment>Display name for EnumerationLiteral &apos;Int16&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Int16.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.Int16</value>
+    <comment>Description for EnumerationLiteral &apos;Int16&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Int64.DisplayName" xml:space="preserve">
+    <value>Int64</value>
+    <comment>Display name for EnumerationLiteral &apos;Int64&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Int64.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.Int64</value>
+    <comment>Description for EnumerationLiteral &apos;Int64&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Int32.DisplayName" xml:space="preserve">
+    <value>Int32</value>
+    <comment>Display name for EnumerationLiteral &apos;Int32&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Int32.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.Int32</value>
+    <comment>Description for EnumerationLiteral &apos;Int32&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Single.DisplayName" xml:space="preserve">
+    <value>Single</value>
+    <comment>Display name for EnumerationLiteral &apos;Single&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Single.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.Single</value>
+    <comment>Description for EnumerationLiteral &apos;Single&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/String.DisplayName" xml:space="preserve">
+    <value>String</value>
+    <comment>Display name for EnumerationLiteral &apos;String&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/String.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.String</value>
+    <comment>Description for EnumerationLiteral &apos;String&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Binary.DisplayName" xml:space="preserve">
+    <value>Binary</value>
+    <comment>Display name for EnumerationLiteral &apos;Binary&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Binary.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.Binary</value>
+    <comment>Description for EnumerationLiteral &apos;Binary&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Timestamp.DisplayName" xml:space="preserve">
+    <value>Timestamp</value>
+    <comment>Display name for EnumerationLiteral &apos;Timestamp&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.BuiltInTypes/Timestamp.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.BuiltInTypes.Timestamp</value>
+    <comment>Description for EnumerationLiteral &apos;Timestamp&apos; on DomainEnumeration &apos;BuiltInTypes&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ConcurrencyCheckFrequency/Always.DisplayName" xml:space="preserve">
+    <value>Always</value>
+    <comment>Display name for EnumerationLiteral &apos;Always&apos; on DomainEnumeration &apos;ConcurrencyCheckFrequency&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ConcurrencyCheckFrequency/Always.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ConcurrencyCheckFrequency.Always</value>
+    <comment>Description for EnumerationLiteral &apos;Always&apos; on DomainEnumeration &apos;ConcurrencyCheckFrequency&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ConcurrencyCheckFrequency/WhenChanged.DisplayName" xml:space="preserve">
+    <value>WhenChanged</value>
+    <comment>Display name for EnumerationLiteral &apos;WhenChanged&apos; on DomainEnumeration &apos;ConcurrencyCheckFrequency&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ConcurrencyCheckFrequency/WhenChanged.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ConcurrencyCheckFrequency.WhenChanged</value>
+    <comment>Description for EnumerationLiteral &apos;WhenChanged&apos; on DomainEnumeration &apos;ConcurrencyCheckFrequency&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ConcurrencyCheckFrequency/Never.DisplayName" xml:space="preserve">
+    <value>Never</value>
+    <comment>Display name for EnumerationLiteral &apos;Never&apos; on DomainEnumeration &apos;ConcurrencyCheckFrequency&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ConcurrencyCheckFrequency/Never.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ConcurrencyCheckFrequency.Never</value>
+    <comment>Description for EnumerationLiteral &apos;Never&apos; on DomainEnumeration &apos;ConcurrencyCheckFrequency&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassShape.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainClass &apos;ClassShape&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassShape.DisplayName" xml:space="preserve">
+    <value>Class Shape</value>
+    <comment>DisplayName for DomainClass &apos;ClassShape&apos;</comment>
+  </data>
+  <data name="ClassShapePropertiesCompartmentTitle" xml:space="preserve">
+    <value>Properties</value>
+    <comment>Compartment title</comment>
+  </data>
+  <data name="ClassShapeNavigationPropertiesCompartmentTitle" xml:space="preserve">
+    <value>NavigationProperties</value>
+    <comment>Compartment title</comment>
+  </data>
+  <data name="ClassShapeNameDefaultText" xml:space="preserve">
+    <value>Name</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.AssociationConnector.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainClass &apos;AssociationConnector&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.AssociationConnector.DisplayName" xml:space="preserve">
+    <value>Association Connector</value>
+    <comment>DisplayName for DomainClass &apos;AssociationConnector&apos;</comment>
+  </data>
+  <data name="AssociationConnectorTargetMultiplicityDefaultText" xml:space="preserve">
+    <value>TargetMultiplicity</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="AssociationConnectorSourceMultiplicityDefaultText" xml:space="preserve">
+    <value>SourceMultiplicity</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.InheritanceConnector.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainClass &apos;InheritanceConnector&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.InheritanceConnector.DisplayName" xml:space="preserve">
+    <value>Inheritance Connector</value>
+    <comment>DisplayName for DomainClass &apos;InheritanceConnector&apos;</comment>
+  </data>
+  <data name="FormatList" xml:space="preserve">
+    <value>AgileModeler (*.models)|*.models</value>
+    <comment>A list of file format specifiers for the Save dialog box</comment>
+  </data>
+  <data name="ModelExplorerTitle" xml:space="preserve">
+    <value>AgileModeler Explorer</value>
+    <comment>Model Explorer Toolwindow title</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassDiagram.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainClass &apos;ClassDiagram&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassDiagram.DisplayName" xml:space="preserve">
+    <value>Class Diagram</value>
+    <comment>DisplayName for DomainClass &apos;ClassDiagram&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassDiagram/Initialized.Description" xml:space="preserve">
+    <value>Description for AgileFx.AgileModeler.ClassDiagram.Initialized</value>
+    <comment>Description for DomainProperty &apos;Initialized&apos; on DomainClass &apos;ClassDiagram&apos;</comment>
+  </data>
+  <data name="AgileFx.AgileModeler.ClassDiagram/Initialized.DisplayName" xml:space="preserve">
+    <value>Initialized</value>
+    <comment>DisplayName for DomainProperty &apos;Initialized&apos; on DomainClass &apos;ClassDiagram&apos;</comment>
+  </data>
+  <data name="Class DiagramsToolboxTab" xml:space="preserve">
+    <value>Class Diagrams</value>
+    <comment>Toolbox item tab name</comment>
+  </data>
+  <data name="ModelClassToolboxItem" xml:space="preserve">
+    <value>Class</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ModelClassToolboxTooltip" xml:space="preserve">
+    <value>Create a Class</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="AssociationToolboxItem" xml:space="preserve">
+    <value>Association</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="AssociationToolboxTooltip" xml:space="preserve">
+    <value>Create an Association</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="InheritanceToolboxItem" xml:space="preserve">
+    <value>Inheritance</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="InheritanceToolboxTooltip" xml:space="preserve">
+    <value>Create an Inheritance link</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="UnresolvedToolboxItem" xml:space="preserve">
+    <value>ToolboxItem {0} was not found</value>
+    <comment>Invalid toolId</comment>
+  </data>
+  <data name="UnsupportedToolboxFormat" xml:space="preserve">
+    <value>Unsupported toolbox format: {0}</value>
+    <comment>Unsupported format Id</comment>
+  </data>
+  <data name="UnrecognizedElementType" xml:space="preserve">
+    <value>ElementType {0} is not recognized as a type of domain class which belongs to this domain model.</value>
+    <comment>Incorrect ElementType passed in to Model.CreateElement method</comment>
+  </data>
+  <data name="UnrecognizedElementLinkType" xml:space="preserve">
+    <value>ElementLinkType {0} is not recognized as a type of domain relationship which belongs to this domain model.</value>
+    <comment>Incorrect ElementLinkType passed in to Model.CreateElementLink method</comment>
+  </data>
+  <data name="AmbiguousSchema" xml:space="preserve">
+    <value>More than one schema found for target namespace &apos;{0}&apos;, use the first one at &apos;{1}&apos;.</value>
+    <comment>Serialization Warning: AmbiguousSchema</comment>
+  </data>
+  <data name="ExpectingFullFormRelationship" xml:space="preserve">
+    <value>Element &apos;{0}&apos; is treated as the target role-player of a relationship &apos;{1}&apos; instance, which should be serialized in full-form.</value>
+    <comment>Serialization Warning: ExpectingFullFormRelationship</comment>
+  </data>
+  <data name="ExpectingShortFormRelationship" xml:space="preserve">
+    <value>Instances of relationship &apos;{0}&apos; should be serialized in short-form.</value>
+    <comment>Serialization Warning: ExpectingShortFormRelationship</comment>
+  </data>
+  <data name="IgnoredPropertyValue" xml:space="preserve">
+    <value>Invalid property value &apos;{0}&apos; for property &apos;{1}&apos; with type &apos;{2}&apos;, ignored.</value>
+    <comment>Serialization Warning: IgnoredPropertyValue</comment>
+  </data>
+  <data name="MissingId" xml:space="preserve">
+    <value>Missing &apos;Id&apos; attribute, a new Guid &apos;{0}&apos; is auto-generated.</value>
+    <comment>Serialization Warning: MissingId</comment>
+  </data>
+  <data name="MonikerResolvedToDuplicateLink" xml:space="preserve">
+    <value>Resolving moniker &apos;{0}&apos; causes a duplicate link to be created, so the link and the moniker are ignored.</value>
+    <comment>Serialization Warning: MonikerResolvedToDuplicateLink</comment>
+  </data>
+  <data name="NoSchema" xml:space="preserve">
+    <value>Cannot find a schema that defines target namespace &apos;{0}&apos;, schema validation skipped.</value>
+    <comment>Serialization Warning: NoSchema</comment>
+  </data>
+  <data name="UnexpectedXmlElement" xml:space="preserve">
+    <value>Unexpected XML element &apos;{0}&apos;, ignored.</value>
+    <comment>Serialization Warning: UnexpectedXmlElement</comment>
+  </data>
+  <data name="AmbiguousMoniker" xml:space="preserve">
+    <value>Ambiguous moniker &apos;{0}&apos; encountered. It is used for both &apos;{1}&apos; and &apos;{2}&apos;.</value>
+    <comment>Serialization Error: AmbiguousMoniker</comment>
+  </data>
+  <data name="CannotMonikerizeElement" xml:space="preserve">
+    <value>Instances of DomainClass &apos;{0}&apos; cannot be serialized as a moniker.
+A DomainClass can be serialized as a moniker only if 
+1) it has a defined/inherited DomainProperty marked as IsMonikerKey=true, or 
+2) it is marked/inherited with SerializeId=true.</value>
+    <comment>Serialization Error: CannotMonikerizeElement</comment>
+  </data>
+  <data name="CannotOpenDocument" xml:space="preserve">
+    <value>Error encountered, check Error List window for details.</value>
+    <comment>Serialization Error: CannotOpenDocument</comment>
+  </data>
+  <data name="CannotSaveDocument" xml:space="preserve">
+    <value>Error encountered, check Error List window for details.</value>
+    <comment>Serialization Error: CannotSaveDocument</comment>
+  </data>
+  <data name="DanglingRelationship" xml:space="preserve">
+    <value>Relationship &apos;{0}&apos; instance is missing target role-player.</value>
+    <comment>Serialization Error: DanglingRelationship</comment>
+  </data>
+  <data name="InvalidPropertyValue" xml:space="preserve">
+    <value>Invalid property value &apos;{0}&apos; for property &apos;{1}&apos; with type &apos;{2}&apos;.</value>
+    <comment>Serialization Error: InvalidPropertyValue</comment>
+  </data>
+  <data name="MissingMoniker" xml:space="preserve">
+    <value>Missing moniker. A moniker is expected in attribute &apos;{0}&apos;.</value>
+    <comment>Serialization Error: MissingMoniker</comment>
+  </data>
+  <data name="MissingTransaction" xml:space="preserve">
+    <value>This must be called within the context of an active transaction.</value>
+    <comment>Serialization Error: MissingTransaction</comment>
+  </data>
+  <data name="UnresolvedMoniker" xml:space="preserve">
+    <value>Cannot resolve moniker &apos;{0}&apos;.</value>
+    <comment>Serialization Error: UnresolvedMoniker</comment>
+  </data>
+  <data name="VersionMismatch" xml:space="preserve">
+    <value>Unsupported version &apos;{0}&apos;, can only support &apos;{1}&apos;.</value>
+    <comment>Serialization Error: VersionMismatch</comment>
+  </data>
+  <data name="CannotCloseExistingDiagramDocument" xml:space="preserve">
+    <value>Diagram file &apos;{0}&apos; cannot be closed.</value>
+    <comment>User cancel closing diagram file. Hence, the DSL model file cannot be opened</comment>
+  </data>
+  <data name="BindingErrorOccurred" xml:space="preserve">
+    <value>Extensions for this designer may not be found as a MEF binding error has occurred. The error that occurred was:
+{0}</value>
+    <comment>MEF binding error occurred - exception message being logged in the error window so the user is aware.</comment>
+  </data>
+  <data name="InvalidSaveRootElementType" xml:space="preserve">
+    <value>&apos;{0}&apos; is not a valid root element type.</value>
+    <comment>Exception message used if an invalid root element type is passed to IDomainModelSerializer.SaveModel / SaveModelAndDiagram</comment>
+  </data>
+  <data name="InvalidSaveDiagramType" xml:space="preserve">
+    <value>&apos;{0}&apos; is not a valid diagram type.</value>
+    <comment>Exception message used if an invalid diagram type is passed to IDomainModelSerializer.SaveModelAndDiagram</comment>
+  </data>
+  <data name="MinimumMultiplicityMissingLink" xml:space="preserve">
+    <value>{0} {1} has no {2}.</value>
+    <comment>Multiplicity underflow validation.</comment>
+  </data>
+  <data name="SaveOperationCancelled" xml:space="preserve">
+    <value>Save operation cancelled.</value>
+    <comment>Message when save is cancelled on validation errors</comment>
+  </data>
+  <data name="SaveValidationFailed" xml:space="preserve">
+    <value>There were validation errors, continue save?</value>
+    <comment>Message when validation errors are found on save</comment>
+  </data>
+  <data name="UnloadableSaveValidationFailed" xml:space="preserve">
+    <value>There were validation errors. Continuing to save may cause the file to become unloadable, do you want to continue?</value>
+    <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ModelClassToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ClassTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="AssociationToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\AssociationTool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="InheritanceToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\generalizationtool.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+</root>
+
+

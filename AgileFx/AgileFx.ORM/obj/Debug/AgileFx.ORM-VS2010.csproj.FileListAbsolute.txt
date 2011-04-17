@@ -1,0 +1,7 @@
+D:\projects\AgileFx\AgileFx\AgileFx.ORM\bin\Debug\AgileFx.ORM.dll
+D:\projects\AgileFx\AgileFx\AgileFx.ORM\bin\Debug\AgileFx.ORM.pdb
+D:\projects\AgileFx\AgileFx\AgileFx.ORM\bin\Debug\AgileFx.Common.dll
+D:\projects\AgileFx\AgileFx\AgileFx.ORM\bin\Debug\AgileFx.Common.pdb
+D:\projects\AgileFx\AgileFx\AgileFx.ORM\obj\Debug\ResolveAssemblyReference.cache
+D:\projects\AgileFx\AgileFx\AgileFx.ORM\obj\Debug\AgileFx.ORM.dll
+D:\projects\AgileFx\AgileFx\AgileFx.ORM\obj\Debug\AgileFx.ORM.pdb

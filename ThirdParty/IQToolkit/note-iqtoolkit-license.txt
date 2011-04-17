@@ -1,0 +1,5 @@
+IQToolkit is a components used within AgileFx, and is included in the distribution for convenience.
+
+IQToolkit is distributed according to the terms of the MsPL License. The Apache 2.0 license used by AgileFx does not apply to IQToolkit.
+
+Also see iqtookit.codeplex.com.txt.
