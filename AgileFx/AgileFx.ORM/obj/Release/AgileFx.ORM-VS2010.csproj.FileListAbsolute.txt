@@ -1,5 +1,0 @@
-D:\projects\AgileFx\AgileFx\Releases\v4.0\AgileFx.ORM.dll
-D:\projects\AgileFx\AgileFx\Releases\v4.0\AgileFx.ORM.pdb
-D:\projects\AgileFx\AgileFx\AgileFx.ORM\obj\Release\ResolveAssemblyReference.cache
-D:\projects\AgileFx\AgileFx\AgileFx.ORM\obj\Release\AgileFx.ORM.dll
-D:\projects\AgileFx\AgileFx\AgileFx.ORM\obj\Release\AgileFx.ORM.pdb
