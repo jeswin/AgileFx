@@ -27,10 +27,6 @@ D:\projects\AgileFx\AgileModeler\AgileModeler\DslPackage\obj\Debug\AgileFx.Agile
 D:\projects\AgileFx\AgileModeler\AgileModeler\DslPackage\obj\Debug\GenerateResource.read.1.tlog
 D:\projects\AgileFx\AgileModeler\AgileModeler\DslPackage\obj\Debug\GenerateResource.write.1.tlog
 D:\projects\AgileFx\AgileModeler\AgileModeler\DslPackage\obj\Debug\Commands.cto
-D:\projects\AgileFx\AgileModeler\AgileModeler\DslPackage\obj\Debug\VSCT.read.1.tlog
-D:\projects\AgileFx\AgileModeler\AgileModeler\DslPackage\obj\Debug\VSCT.write.1.tlog
-D:\projects\AgileFx\AgileModeler\AgileModeler\DslPackage\obj\Debug\VSPackage.resources.original
-D:\projects\AgileFx\AgileModeler\AgileModeler\DslPackage\obj\Debug\CtoResourceMerger.cache
 D:\projects\AgileFx\AgileModeler\AgileModeler\DslPackage\obj\Debug\AgileFx.AgileModeler.DslPackage.dll
 D:\projects\AgileFx\AgileModeler\AgileModeler\DslPackage\obj\Debug\AgileFx.AgileModeler.DslPackage.pdb
 D:\projects\AgileFx\AgileModeler\AgileModeler\DslPackage\obj\Debug\AgileFx.AgileModeler.DslPackage.pkgdef
